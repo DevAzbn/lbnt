@@ -1,0 +1,64 @@
+@keyframes animated-rotateOut {
+	from {
+		transform-origin: center;
+		opacity: 1;
+	}
+
+	to {
+		transform-origin: center;
+		transform: rotate3d(0, 0, 1, 200deg);
+		opacity: 0;
+	}
+}
+
+@keyframes animated-rotateOutDownLeft {
+	from {
+		transform-origin: left bottom;
+		opacity: 1;
+	}
+
+	to {
+		transform-origin: left bottom;
+		transform: rotate3d(0, 0, 1, 45deg);
+		opacity: 0;
+	}
+}
+
+@keyframes animated-rotateOutDownRight {
+	from {
+		transform-origin: right bottom;
+		opacity: 1;
+	}
+
+	to {
+		transform-origin: right bottom;
+		transform: rotate3d(0, 0, 1, -45deg);
+		opacity: 0;
+	}
+}
+
+@keyframes animated-rotateOutUpLeft {
+	from {
+		transform-origin: left bottom;
+		opacity: 1;
+	}
+
+	to {
+		transform-origin: left bottom;
+		transform: rotate3d(0, 0, 1, -45deg);
+		opacity: 0;
+	}
+}
+
+@keyframes animated-rotateOutUpRight {
+	from {
+		transform-origin: right bottom;
+		opacity: 1;
+	}
+
+	to {
+		transform-origin: right bottom;
+		transform: rotate3d(0, 0, 1, 90deg);
+		opacity: 0;
+	}
+}

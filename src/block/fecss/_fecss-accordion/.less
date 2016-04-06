@@ -1,0 +1,32 @@
+.fecss-accordion {
+	
+	&.on-hover {
+		.acc-item:hover {
+			.body {
+				height:auto;
+				opacity:1;
+			}
+		}
+	}
+	
+	.acc-item {
+		
+		.header  {
+			display:block;
+			cursor:pointer;
+			padding:1em 0;
+			
+			&:focus + .body {
+				height:auto;
+				opacity:1;
+			}
+			
+		}
+		.body {
+			height:0;
+			opacity:0;
+			transition:all @trans-speed ease;
+		}
+	}
+	
+}

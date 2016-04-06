@@ -1,0 +1,158 @@
+@keyframes animated-rolling-image-sq {
+	0% {
+		transform:rotate(0deg);
+	}
+	
+	20% {
+		transform:rotate(90deg);
+	}
+	
+	80% {
+		transform:rotate(90deg);
+	}
+	
+	100% {
+		transform:rotate(180deg);
+	}
+}
+@keyframes animated-rolling-image {
+	0%, 100% {
+		z-index:0;
+	}
+}
+
+
+.fun.rolling-image {
+	@size : 200px;
+	@period : 0.5s;
+	
+	#fe.w(@size * 2);
+	#fe.h(@size * 2);
+	margin:0 auto;
+	border-radius:50%;
+	position:relative;
+	overflow:hidden;
+	z-index:1;
+	
+	.img-item {
+		position:absolute;
+		overflow:hidden;
+		#fe.w(100%);
+		#fe.h(100%);
+		opacity:0;
+		z-index:-1;
+		transition:all 0.001s linear;
+		transition-delay:@period * 4;
+		background-position:center center;
+		background-size:cover;
+		
+		&.on-top {
+			opacity:1;
+			z-index:0;
+		}
+	}
+	
+	.sq {
+		position:absolute;
+		overflow:hidden;
+		#fe.w(50%);
+		#fe.h(50%);
+		z-index:4;
+		
+		&:before {
+			content:'';
+			position:absolute;
+			#fe.w(100%);
+			#fe.h(100%);
+			#fe.bg(#ff0000);
+			transform-origin:center center;
+			animation-timing-function: linear;
+			animation-duration:@period * 5;
+		}
+		
+		&.sq-t-r {
+			left:50%;
+			bottom:50%;
+			
+			&:before {
+				right:100%;
+				bottom:0;
+				transform-origin:100% 100%;
+				border-radius:200% 0 0 0;
+			}
+		}
+		&.sq-b-r {
+			left:50%;
+			top:50%;
+			
+			&:before {
+				left:0;
+				bottom:100%;
+				transform-origin:0% 100%;
+				border-radius:0 200% 0 0;
+			}
+		}
+		&.sq-b-l {
+			right:50%;
+			top:50%;
+			
+			&:before {
+				left:100%;
+				top:0;
+				transform-origin:0% 0%;
+				border-radius:0 0 200% 0;
+			}
+		}
+		&.sq-t-l {
+			right:50%;
+			bottom:50%;
+			
+			&:before {
+				left:0;
+				top:100%;
+				transform-origin:100% 0%;
+				border-radius:0 0 0 200%;
+			}
+		}
+	}
+	
+	&.active {
+		
+		.sq {
+			
+			&:before {
+				
+			}
+			
+			&.sq-t-r {
+				
+				&:before {
+					animation-delay:@period * 0;
+					animation-name:animated-rolling-image-sq;
+				}
+			}
+			&.sq-b-r {
+				
+				&:before {
+					animation-delay:@period * 1;
+					animation-name:animated-rolling-image-sq;
+				}
+			}
+			&.sq-b-l {
+				
+				&:before {
+					animation-delay:@period * 2;
+					animation-name:animated-rolling-image-sq;
+				}
+			}
+			&.sq-t-l {
+				
+				&:before {
+					animation-delay:@period * 3;
+					animation-name:animated-rolling-image-sq;
+				}
+			}
+		}
+		
+	}
+}

@@ -1,0 +1,94 @@
+window.onerror
+
+
+[snp tpl="src/_/concat.plugin.js" ]
+	.scroll-container
+	.tooltip
+
+
+$(document).ready
+	
+	
+	[snp tpl="src/_/concat.body.on.js" ]
+		$(document.body).on('fecss.default')
+		$(document.body).on('fecss.init')
+		$(document.body).on('fecss.window.unload')
+		$(document.body).on('fecss.ajax.success')
+		$(document.body).on('fecss.keydown')
+		$(document.body).on('DOMSubtreeModified')
+		$(document.body).on('DOMSubtreeModified', '.fecss-change-dom')
+			$('.fecss-change-dom').on('fecss.changeDOM')
+		$(document.body).on('fecss.url-history.get')
+		window.addEventListener('popstate')
+		$(document.body).on('fecss.modal.show.after')
+		$(document.body).on('fecss.modal.hide.after')
+		$(document.body).on('fecss.active.set')
+		$(document.body).on('fecss.active.unset')
+	
+	
+	[snp tpl="src/_/concat.document-ready.js" ]
+		$(document.body).bind('keydown')
+		$(document.body).on('click.fecss.fecss-collapse.collapser')
+		$(document.ready).on('click.fecss.go-to-top')
+		$(document.body).on('click.fecss.rolling-image-btn')
+		$(window).load() //$('.page-loader').removeClass('active');
+		$(document.body).on('click.fecss.imgresizer')
+		$(document.body).on('click.fecss.url-history')
+		$(document.body).on('click.fecss.modal.show')
+		$(document.body).on('click.fecss.modal.hide')
+		$(document.body).on('click.fecss.can-close.close-btn')
+		$(document.body).on('click.fecss.page-loader.close-loader')
+		$(document.body).on('click.fecss.scrollto')
+		//$('.touchswipe').swipe({})
+		$('.fecss-jscacher')
+			.on('cacher-clear')
+			.on('cacher-cache')
+			.on('cacher-load')
+			.on('cacher-check')
+		$('.fecss-jsviewed')
+			.on('rebuild')
+			.on('create-view')
+			.on('clear')
+			.find('.jsviewed-clear-btn').on('click.jsviewed')
+		$('.fecss-jscart')
+			.on('rebuild')
+			.on('clear')
+			.on('create-order')
+			.find('.jscart-item .jscart-add-btn').on('click.jscart')
+			.find('.jscart-item .jscart-remove-btn').on('click.jscart')
+			.find('.jscart-clear-btn').on('click.jscart')
+			.find('.jscart-create-order').on('click.jscart')
+		$('.scroll-container')
+			.on('init')
+			.on('scroll')
+		$('.line-gallery')
+			.on('click.line-gallery.right', '.btn-arrow.right')
+			.on('click.line-gallery.left', '.btn-arrow.left')
+			.data('fecss-timer')
+		$('.arrow-slider')
+			find('a.item').on('click.arrow-slider.point')
+			.on('click.arrow-slider.right', '.btn-arrow.right')
+			.on('click.arrow-slider.left', '.btn-arrow.left')
+			.data('fecss-timer')
+		$('[data-toggle="tooltip"]').tooltip();
+			
+	
+	$(window).on('resize')
+		$('.scroll-container').trigger('init');
+		$('html body').eq(0).addClass(wcl).addClass(hcl);
+		
+	
+	$(window).on('scroll')
+		$('.go-to-top')
+	
+	$('body').on('changeClass')
+		[snp tpl="src/_/concat.body.changeClass.js" ]
+			$('.line-gallery')
+	
+	[snp tpl="src/_/concat.changeClass.js" ]
+	
+	
+	window.onbeforeunload
+	
+	$(document.body).trigger('fecss.init');
+	

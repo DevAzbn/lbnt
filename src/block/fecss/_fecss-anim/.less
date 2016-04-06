@@ -1,0 +1,39 @@
+.fecss-anim {
+	transition:all @trans-speed ease;
+	transform-origin:center center;
+	
+	&:hover {
+	
+	}
+	
+	&[data-anim-type="hover-scale-plus"] {
+		display:inline-block;
+		transition:transform 0.5s ease;
+		
+		&:hover {
+			transform:scale(1.15);
+		}
+		
+	}
+	
+	&[data-anim-type="hover-scale-minus"] {
+		display:inline-block;
+		transition:transform 0.5s ease;
+		
+		&:hover {
+			transform:scale(0.85);
+		}
+		
+	}
+	
+	&[data-anim-type="hover-outline-offset"] {
+		outline:1px #ff0000 solid;
+		outline-offset:initial;
+		transition:outline-offset 0.5s ease;
+		
+		&:hover {
+			outline-offset:1em;
+		}
+		
+	}
+}

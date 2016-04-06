@@ -1,0 +1,385 @@
+@import "animation/processloading.less";
+
+
+/*
+
+http://daneden.github.io/animate.css/
+
+*/
+
+@import "animation/animated-bounce.less";
+
+@import "animation/animated-flash.less";
+
+@import "animation/animated-pulse.less";
+
+@import "animation/animated-rubberBand.less";
+
+@import "animation/animated-shake.less";
+
+@import "animation/animated-swing.less";
+
+@import "animation/animated-tada.less";
+
+@import "animation/animated-wobble.less";
+
+@import "animation/animated-jello.less";
+
+@import "animation/animated-bounceIn.less";
+@import "animation/animated-bounceOut.less";
+
+@import "animation/animated-fadeIn.less";
+@import "animation/animated-fadeOut.less";
+
+@import "animation/animated-flip.less";
+
+@import "animation/animated-lightSpeedIn.less";
+@import "animation/animated-lightSpeedOut.less";
+
+@import "animation/animated-rotateIn.less";
+@import "animation/animated-rotateOut.less";
+
+@import "animation/animated-hinge.less";
+
+@import "animation/animated-rollIn.less";
+@import "animation/animated-rollOut.less";
+
+@import "animation/animated-zoomIn.less";
+@import "animation/animated-zoomOut.less";
+
+@import "animation/animated-slideIn.less";
+@import "animation/animated-slideOut.less";
+
+
+.animated {
+	animation-duration: 1s;
+	animation-fill-mode: both;
+	
+	/* бесконечно */
+	&.infinite {
+		animation-iteration-count: infinite;
+	}
+	
+	&.hinge {
+		animation-duration: @trans-speed * 5;
+	}
+	
+	&.bounceIn, &.bounceOut {
+		animation-duration: @trans-speed * 2;
+	}
+	
+	&.flipOutX, &.flipOutY {
+		animation-duration: @trans-speed * 2;
+	}
+	
+	&.bounce {
+		animation-name: animated-bounce;
+		transform-origin: center bottom;
+	}
+	
+	&.flash {
+		animation-name: animated-flash;
+	}
+	
+	&.pulse {
+		animation-name: animated-pulse;
+	}
+	
+	&.rubberBand {
+		animation-name: animated-rubberBand;
+	}
+
+	&.shake {
+		animation-name: animated-shake;
+	}
+
+	&.swing {
+		transform-origin: top center;
+		animation-name: animated-swing;
+	}
+
+	&.tada {
+		animation-name: animated-tada;
+	}
+
+	&.wobble {
+		animation-name: animated-wobble;
+	}
+
+	&.jello {
+		animation-name: animated-jello;
+		transform-origin: center;
+	}
+
+	&.bounceIn {
+		animation-name: animated-bounceIn;
+	}
+
+	&.bounceInDown {
+		animation-name: animated-bounceInDown;
+	}
+
+	&.bounceInLeft {
+		animation-name: animated-bounceInLeft;
+	}
+
+	&.bounceInRight {
+		animation-name: animated-bounceInRight;
+	}
+
+	&.bounceInUp {
+		animation-name: animated-bounceInUp;
+	}
+
+	&.bounceOut {
+		animation-name: animated-bounceOut;
+	}
+
+	&.bounceOutDown {
+		animation-name: animated-bounceOutDown;
+	}
+
+	&.bounceOutLeft {
+		animation-name: animated-bounceOutLeft;
+	}
+
+	&.bounceOutRight {
+		animation-name: animated-bounceOutRight;
+	}
+
+	&.bounceOutUp {
+		animation-name: animated-bounceOutUp;
+	}
+
+	&.fadeIn {
+		animation-name: animated-fadeIn;
+	}
+
+	&.fadeInDown {
+		animation-name: animated-fadeInDown;
+	}
+
+	&.fadeInDownBig {
+		animation-name: animated-fadeInDownBig;
+	}
+
+	&.fadeInLeft {
+		animation-name: animated-fadeInLeft;
+	}
+
+	&.fadeInLeftBig {
+		animation-name: animated-fadeInLeftBig;
+	}
+
+	&.fadeInRight {
+		animation-name: animated-fadeInRight;
+	}
+
+	&.fadeInRightBig {
+		animation-name: animated-fadeInRightBig;
+	}
+
+	&.fadeInUp {
+		animation-name: animated-fadeInUp;
+	}
+
+	&.fadeInUpBig {
+		animation-name: animated-fadeInUpBig;
+	}
+
+	&.fadeOut {
+		animation-name: animated-fadeOut;
+	}
+
+	&.fadeOutDown {
+		animation-name: animated-fadeOutDown;
+	}
+
+	&.fadeOutDownBig {
+		animation-name: animated-fadeOutDownBig;
+	}
+
+	&.fadeOutLeft {
+		animation-name: animated-fadeOutLeft;
+	}
+
+	&.fadeOutLeftBig {
+		animation-name: animated-fadeOutLeftBig;
+	}
+
+	&.fadeOutRight {
+		animation-name: animated-fadeOutRight;
+	}
+
+	&.fadeOutRightBig {
+		animation-name: animated-fadeOutRightBig;
+	}
+
+	&.fadeOutUp {
+		animation-name: animated-fadeOutUp;
+	}
+
+	&.fadeOutUpBig {
+		animation-name: animated-fadeOutUpBig;
+	}
+
+	&.flip {
+		backface-visibility: visible;
+		animation-name: animated-flip;
+	}
+
+	&.flipInX {
+		backface-visibility: visible !important;
+		animation-name: animated-flipInX;
+	}
+
+	&.flipInY {
+		backface-visibility: visible !important;
+		animation-name: animated-flipInY;
+	}
+
+	&.flipOutX {
+		animation-name: animated-flipOutX;
+		backface-visibility: visible !important;
+	}
+
+	&.flipOutY {
+		backface-visibility: visible !important;
+		animation-name: animated-flipOutY;
+	}
+
+	&.lightSpeedIn {
+		animation-name: animated-lightSpeedIn;
+		animation-timing-function: ease-out;
+	}
+
+	&.lightSpeedOut {
+		animation-name: animated-lightSpeedOut;
+		animation-timing-function: ease-in;
+	}
+
+	&.rotateIn {
+		animation-name: animated-rotateIn;
+	}
+
+	&.rotateInDownLeft {
+		animation-name: animated-rotateInDownLeft;
+	}
+
+	&.rotateInDownRight {
+		animation-name: animated-rotateInDownRight;
+	}
+
+	&.rotateInUpLeft {
+		animation-name: animated-rotateInUpLeft;
+	}
+
+	&.rotateInUpRight {
+		animation-name: animated-rotateInUpRight;
+	}
+
+	&.rotateOut {
+		animation-name: animated-rotateOut;
+	}
+
+	&.rotateOutDownLeft {
+		animation-name: animated-rotateOutDownLeft;
+	}
+
+	&.rotateOutDownRight {
+		animation-name: animated-rotateOutDownRight;
+	}
+
+	&.rotateOutUpLeft {
+		animation-name: animated-rotateOutUpLeft;
+	}
+
+	&.rotateOutUpRight {
+		animation-name: animated-rotateOutUpRight;
+	}
+
+	&.hinge {
+		animation-name: animated-hinge;
+	}
+
+	&.rollIn {
+		animation-name: animated-rollIn;
+	}
+
+	&.rollOut {
+		animation-name: animated-rollOut;
+	}
+
+	&.zoomIn {
+		animation-name: animated-zoomIn;
+	}
+
+	&.zoomInDown {
+		animation-name: animated-zoomInDown;
+	}
+
+	&.zoomInLeft {
+		animation-name: animated-zoomInLeft;
+	}
+	
+	&.zoomInRight {
+		animation-name: animated-zoomInRight;
+	}
+
+	&.zoomInUp {
+		animation-name: animated-zoomInUp;
+	}
+
+	&.zoomOut {
+		animation-name: animated-zoomOut;
+	}
+
+	&.zoomOutDown {
+		animation-name: animated-zoomOutDown;
+	}
+
+	&.zoomOutLeft {
+		animation-name: animated-zoomOutLeft;
+	}
+
+	&.zoomOutRight {
+		animation-name: animated-zoomOutRight;
+	}
+
+	&.zoomOutUp {
+		animation-name: animated-zoomOutUp;
+	}
+
+	&.slideInDown {
+		animation-name: animated-slideInDown;
+	}
+
+	&.slideInLeft {
+		animation-name: animated-slideInLeft;
+	}
+
+	&.slideInRight {
+		animation-name: animated-slideInRight;
+	}
+	
+	&.slideInUp {
+		animation-name: animated-slideInUp;
+	}
+
+	&.slideOutDown {
+		animation-name: animated-slideOutDown;
+	}
+
+	&.slideOutLeft {
+		animation-name: animated-slideOutLeft;
+	}
+
+	&.slideOutRight {
+		animation-name: animated-slideOutRight;
+	}
+
+	&.slideOutUp {
+		animation-name: animated-slideOutUp;
+	}
+	
+}

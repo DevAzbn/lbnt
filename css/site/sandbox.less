@@ -1,0 +1,50 @@
+.sandbox {
+	
+	* {
+		max-width:100%;
+		#fe.ff(inherit);
+		vertical-align:baseline;
+		border-collapse:collapse;
+		cursor:auto;
+	}
+	
+	img, iframe, embed {
+		
+	}
+	
+	p {
+		margin: 0 0 2em 0;
+		#fe.lh(1.5em);
+		
+		a {
+			#fe.underline();
+			#fe.bold();
+			
+			&:hover {
+				#fe.underline(none);
+			}
+		}
+	}
+	
+	&[class*='style-'] {
+		
+		&.style-b0w {
+			#fe.color(#000000);
+			#fe.bg(#ffffff);
+			
+			a {
+				#fe.color(#000000);
+			}
+		}
+		&.style-w0b {
+			#fe.color(#ffffff);
+			#fe.bg(#000000);
+			
+			a {
+				#fe.color(#ffffff);
+			}
+		}
+		
+	}
+	
+}
