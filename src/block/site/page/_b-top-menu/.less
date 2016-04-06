@@ -1,0 +1,48 @@
+.b-top-menu {
+	position:fixed;
+	left:0;
+	top:0;
+	#fe.w(100%);
+	#fe.bg(transparent);
+	#fe.color(@c-text);
+	#fe.z(1);
+	
+	.site-menu {
+		#fe.lh(13px);
+		#fe.lh(3em);
+		
+		a {
+			#fe.color(@c-text);
+			
+			&.order-service-btn {
+				display:inline-block;
+				#fe.bg(#2f9981);
+				#fe.color(#ffffff);
+			}
+		}
+	}
+	
+	.contact-menu {
+		#fe.lh(13px);
+		#fe.lh(3em);
+		
+		a {
+			#fe.color(@c-text);
+			#fe.underline();
+			#fe.uppercase();
+			
+			&:hover {
+				#fe.underline(none);
+			}
+		}
+	}
+	
+	a {
+		#fe.underline(none);
+		
+		&:hover {
+			#fe.underline();
+		}
+		
+	}
+}

@@ -1,0 +1,43 @@
+.b-welcome {
+	position:relative;
+	#fe.bg(#ffffff);
+	#fe.color(@c-text);
+	
+	.welcome-title {
+		max-width:630px;
+		#fe.size(6em);
+	}
+	.welcome-about {
+		max-width:630px;
+		#fe.size(2.4em);
+		
+		a {
+			#fe.color(@c-text);
+			#fe.underline();
+			
+			&:hover {
+				#fe.underline(none);
+			}
+		}
+	}
+}
+.v-grey-line {
+	position:absolute;
+	#fe.h(100%);
+	#fe.w(1px);
+	#fe.bg(#c4c4c4);
+	left:0;
+	top:0;
+	z-index:0;
+	
+	&.left {
+		left:0;
+	}
+	&.right {
+		right:0;
+	}
+	&.center {
+		left:50%;
+	}
+	
+}
