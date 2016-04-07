@@ -1,3 +1,55 @@
 .b-project-container {
+	position:relative;
 	#fe.bg(@c-l-green);
+	
+	height:1080px;
+	
+	.project-slide {
+		position:absolute;
+		left:0;
+		top:0;
+	}
+	
+	.nav-control {
+		position:absolute;
+		right:4em;
+		top:0;
+		bottom:0;
+		text-align:right;
+		
+		#fe.w(4em);
+		
+		.item-cell {
+			#fe.w(100%);
+			#fe.h(100%);
+		}
+		
+		.item {
+			position:relative;
+			display:block;
+			vertical-align:middle;
+			margin:2em 0;
+			#fe.w(100%);
+			#fe.h(10px);
+			
+			&:after {
+				position:absolute;
+				content:'';
+				right:0;
+				top:40%;
+				transition:width @trans-speed / 2 ease;
+				
+				#fe.w(50%);
+				#fe.h(20%);
+				#fe.bg(#000000);
+			}
+			
+			&.active {
+				
+				&:after {
+					#fe.w(100%);
+				}
+			}
+		}
+	}
 }

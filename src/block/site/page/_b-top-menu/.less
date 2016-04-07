@@ -7,12 +7,29 @@
 	#fe.color(@c-text);
 	#fe.z(1);
 	
-	.site-menu {
+	.site-menu, .contact-menu {
 		#fe.lh(13px);
 		#fe.lh(3em);
 		
+		ul {
+			list-style-type:none;
+			
+			li {
+				display:inline-block;
+			}
+		}
+		
 		a {
 			#fe.color(@c-text);
+		}
+		
+	}
+	
+	.site-menu {
+		float:left;
+		
+		a {
+			
 			
 			&.order-service-btn {
 				display:inline-block;
@@ -23,11 +40,9 @@
 	}
 	
 	.contact-menu {
-		#fe.lh(13px);
-		#fe.lh(3em);
+		float:right;
 		
 		a {
-			#fe.color(@c-text);
 			#fe.underline();
 			#fe.uppercase();
 			

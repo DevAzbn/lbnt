@@ -1,7 +1,31 @@
 .b-welcome {
-	position:relative;
+	
 	#fe.bg(#ffffff);
 	#fe.color(@c-text);
+	
+	.line-grid {
+		position:relative;
+		
+		.v-grey-line {
+			position:absolute;
+			#fe.h(100%);
+			#fe.w(1px);
+			#fe.bg(#c4c4c4);
+			top:0;
+			z-index:0;
+			
+			&.left {
+				left:0;
+			}
+			&.right {
+				right:0;
+			}
+			&.center {
+				left:50%;
+			}
+			
+		}
+	}
 	
 	.welcome-title {
 		max-width:630px;
@@ -20,24 +44,4 @@
 			}
 		}
 	}
-}
-.v-grey-line {
-	position:absolute;
-	#fe.h(100%);
-	#fe.w(1px);
-	#fe.bg(#c4c4c4);
-	left:0;
-	top:0;
-	z-index:0;
-	
-	&.left {
-		left:0;
-	}
-	&.right {
-		right:0;
-	}
-	&.center {
-		left:50%;
-	}
-	
 }
