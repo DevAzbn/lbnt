@@ -1,17 +1,16 @@
 	
 	.include-custom-font(@family: Arial, @weight: normal, @style: normal){
 		@font-face{
-			/*
-			font-family: "PFAgoraSansPro";
+			font-family: '@{family}';
 			
-			src:url('@{url-path-fonts}/fonts/@{family}/@{family}.eot');
-			src:url('@{url-path-fonts}/fonts/@{family}/@{family}.eot?#iefix') format('embedded-opentype'),
-				url('@{url-path-fonts}/fonts/@{family}/@{family}.woff') format('woff'),
-				url('@{url-path-fonts}/fonts/@{family}/@{family}.ttf') format('truetype'),
-				url('@{url-path-fonts}/fonts/@{family}/@{family}.svg#icon') format('svg');
+			src:url('@{url-path-fonts}/@{family}/@{family}.eot');
+			src:url('@{url-path-fonts}/@{family}/@{family}.eot?#iefix') format('embedded-opentype'),
+				url('@{url-path-fonts}/@{family}/@{family}.woff') format('woff'),
+				url('@{url-path-fonts}/@{family}/@{family}.woff2') format('woff2'),
+				url('@{url-path-fonts}/@{family}/@{family}.ttf') format('truetype'),
+				url('@{url-path-fonts}/@{family}/@{family}.svg#icon') format('svg');
 			font-weight: @weight;
 			font-style: @style;
-			*/
 		}
 	}
 	

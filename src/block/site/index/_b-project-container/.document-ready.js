@@ -41,6 +41,14 @@ $(document.body).on('fecss.b-project-container.init', '.b-project-container', {}
 			.appendTo(nav);
 	});
 	
+	var h = nav.outerHeight(true);
+	var top_value = (block.outerHeight(true) - h) / 2;
+	nav.parent().css({
+		height : h +'px',
+		top : top_value +'px',
+		bottom : top_value +'px',
+	})
+	
 	nav.find('a.item').eq(0).trigger('click.fecss.b-project-container.nav-control.item');
 	
 });

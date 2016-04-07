@@ -1353,7 +1353,7 @@
 		
 		.item-cell {
 			#fe.w(100%);
-			#fe.h(100%);
+			//#fe.h(100%);
 		}
 		
 		.item {
@@ -1417,6 +1417,7 @@
 	.welcome-title {
 		max-width:630px;
 		#fe.size(6em);
+		#fe.ff(pnb);
 	}
 	.welcome-about {
 		max-width:630px;
@@ -1503,6 +1504,7 @@ body {
 	.order-title {
 		max-width:630px;
 		#fe.size(6em);
+		#fe.ff(pnb);
 	}
 	.order-stick {
 		.green-stick {
@@ -1523,7 +1525,9 @@ body {
 				position:relative;
 				display:inline-block;
 				#fe.color(#2f9981);
-				#fe.bold();
+				//#fe.size(3em);
+				#fe.ff(pnb);
+				
 				
 				&:after {
 					position:absolute;
@@ -1682,6 +1686,19 @@ body {
 	#fe.bpos();
 	#fe.brep();
 	#fe.bsize(cover);
+	
+	.title {
+		#fe.ff(pnb);
+		#fe.size(3.5em);
+	}
+	.preview {
+		#fe.ff(pnl);
+		#fe.size(1.3em);
+	}
+	.link {
+		position:relative;
+		#fe.uppercase();
+	}
 }
 .b-project-filters {
 	
