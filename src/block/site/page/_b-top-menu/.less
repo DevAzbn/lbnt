@@ -2,10 +2,11 @@
 	position:fixed;
 	left:0;
 	top:0;
+	padding:2em 0;
 	#fe.w(100%);
 	#fe.bg(transparent);
 	#fe.color(@c-text);
-	#fe.z(1);
+	#fe.z(5);
 	
 	.site-menu, .contact-menu {
 		#fe.lh(13px);
@@ -16,11 +17,21 @@
 			
 			li {
 				display:inline-block;
+				margin:0 1.5em;
+				
+				&:first-child {
+					margin-left:3em;
+				}
+				&:last-child {
+					margin-right:3em;
+				}
 			}
 		}
 		
 		a {
+			#fe.uppercase();
 			#fe.color(@c-text);
+			#fe.size(1.3em);
 		}
 		
 	}
@@ -33,8 +44,17 @@
 			
 			&.order-service-btn {
 				display:inline-block;
+				padding:0 20px 0;
+				border-radius:15px;
+				transition:all @trans-speed ease;
 				#fe.bg(#2f9981);
 				#fe.color(#ffffff);
+				#fe.underline(none);
+				
+				&:hover {
+					#fe.bg(transparent);
+					#fe.color(#2f9981);
+				}
 			}
 		}
 	}
@@ -43,12 +63,7 @@
 		float:right;
 		
 		a {
-			#fe.underline();
-			#fe.uppercase();
-			
-			&:hover {
-				#fe.underline(none);
-			}
+			#fe.bold();
 		}
 	}
 	

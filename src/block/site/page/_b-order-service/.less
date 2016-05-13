@@ -1,5 +1,6 @@
 .b-order-service {
 	position:relative;
+	padding:10em 0 6em;
 	#fe.bg(@c-s-black);
 	#fe.color(#ffffff);
 	
@@ -9,6 +10,7 @@
 		#fe.ff(pnb);
 	}
 	.order-stick {
+		margin:3em 0;
 		.green-stick {
 			#fe.w(60px);
 			#fe.h(2px);
@@ -16,7 +18,8 @@
 		}
 	}
 	.order-about {
-		max-width:630px;
+		max-width:670px;
+		margin-bottom:5em;
 		#fe.size(2.4em);
 		
 		a {
@@ -63,19 +66,31 @@
 		
 		li {
 			display:inline-block;
+			margin-right:5em;
 			
 			a {
 				position:relative;
+				transition:all @trans-speed ease;
 				#fe.color(#6a6a6a);
 				#fe.uppercase();
 				#fe.size(1.3em);
 				
+				&:hover {
+					#fe.color(#ffffff);
+					
+					&:after {
+						#fe.bg(#ffffff);
+					}
+				}
+				
 				&:after {
+					content:'';
 					position:absolute;
+					transition:all @trans-speed ease;
 					left:0;
 					top:200%;
-					#fe.h(100%);
-					#fe.w(8px);
+					#fe.h(8px);
+					#fe.w(100%);
 					#fe.bg(#6a6a6a);
 				}
 			}

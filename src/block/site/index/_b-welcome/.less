@@ -5,36 +5,81 @@
 	
 	.line-grid {
 		position:relative;
+		padding:12em 0;
+		
+		@keyframes v-grey-line-anim {
+			from {
+				height:0;
+			}
+			to {
+				height:100%;
+			}
+		}
 		
 		.v-grey-line {
 			position:absolute;
-			#fe.h(100%);
+			#fe.h(0);
 			#fe.w(1px);
 			#fe.bg(#c4c4c4);
-			top:0;
+			
 			z-index:0;
+			animation-duration:@trans-speed * 2;
+			animation-name: v-grey-line-anim;
+			animation-fill-mode:forwards;
 			
 			&.left {
 				left:0;
+				bottom:0;
+				animation-delay:@trans-speed * 2;
 			}
 			&.right {
 				right:0;
+				top:0;
+				animation-delay:@trans-speed * 4;
 			}
 			&.center {
 				left:50%;
+				bottom:0;
+				animation-delay:@trans-speed * 3;
 			}
 			
 		}
 	}
 	
+	@keyframes welcome-title-stick {
+		from {
+			left:-300%;
+		}
+		to {
+			left:0;
+		}
+	}
+	
 	.welcome-title {
+		position:relative;
 		max-width:630px;
+		margin-bottom:1em;
 		#fe.size(6em);
 		#fe.ff(pnb);
+		
+		&:before {
+			content:'';
+			position:absolute;
+			left:-300%;
+			bottom:-0.5em;
+			#fe.w(60px);
+			#fe.h(4px);
+			#fe.bg(#009a81);
+			animation-duration:@trans-speed * 2;
+			animation-name: welcome-title-stick;
+			animation-delay:@trans-speed * 2;
+			animation-fill-mode:forwards;
+		}
 	}
 	.welcome-about {
-		max-width:630px;
+		max-width:670px;
 		#fe.size(2.4em);
+		#fe.lh(1.33333333em);
 		
 		a {
 			#fe.color(@c-text);

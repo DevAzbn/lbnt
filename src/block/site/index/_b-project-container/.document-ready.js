@@ -29,6 +29,10 @@ $(document.body).on('fecss.b-project-container.init', '.b-project-container', {}
 	var slides = block.find('.project-slide');
 	var nav = block.find('.nav-control .item-cell');
 	
+	block.css({
+		height : $(window).outerHeight(true),
+	})
+	
 	nav.empty();
 	
 	slides.each(function(_index){

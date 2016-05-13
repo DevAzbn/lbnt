@@ -1,0 +1,127 @@
+.b-project-other {
+	position:relative;
+	#fe.h(15.5em);
+	
+	.other-btn {
+		position:absolute;
+		top:0;
+		#fe.h(100%);
+		
+		
+		&.left, &.right {
+			
+			&:hover {
+				.imaged, .texted {
+					opacity:1;
+				}
+			}
+			
+			.arrow {
+				position:absolute;
+				top:0;
+				transition:all @trans-speed ease;
+				#fe.brep();
+				#fe.h(100%);
+			}
+			
+			.imaged {
+				opacity:0;
+				left:0;
+				right:0;
+				top:0;
+				bottom:0;
+				position:absolute;
+				transition:all @trans-speed ease;
+				#fe.brep();
+				#fe.bpos();
+				#fe.bsize(cover);
+			}
+			.texted {
+				opacity:0;
+				bottom:5em;
+				position:absolute;
+				transition:all @trans-speed ease;
+				#fe.color(#ffffff);
+				
+				.title {
+					#fe.size(30px);
+					#fe.ff(pnb);
+					//#fe.lh(0.83em);
+				}
+				.preview {
+					#fe.size(18px);
+					//#fe.lh(2.75em);
+				}
+			}
+		}
+		
+		&.left {
+			left:0;
+			#fe.w(45%);
+			
+			&:hover {
+				.arrow {
+					left:3em;
+					//#site.bi('project/_b-project-other/other-btn-left-white.png');
+				}
+			}
+			
+			.arrow {
+				left:4em;
+				#fe.w(50%);
+				#fe.bpos(left center);
+				#site.bi('project/_b-project-other/other-btn-left.png');
+			}
+			
+			.texted {
+				right:6em;
+				text-align:right;
+			}
+		}
+		&.list {
+			left:45%;
+			#fe.w(10%);
+			
+			&:hover {
+				.sq {
+					transform:rotate(90deg);
+				}
+			}
+			
+			.sq {
+				position:absolute;
+				top:25%;
+				left:25%;
+				transition:all @trans-speed ease;
+				transform-origin:center center;
+				#fe.w(50%);
+				#fe.h(50%);
+				#fe.bpos();
+				#fe.brep();
+				#site.bi('project/_b-project-other/other-btn-list.png');
+			}
+		}
+		&.right {
+			right:0;
+			#fe.w(45%);
+			
+			&:hover {
+				.arrow {
+					right:3em;
+					//#site.bi('project/_b-project-other/other-btn-right-white.png');
+				}
+			}
+			
+			.arrow {
+				right:4em;
+				#fe.w(50%);
+				#fe.bpos(right center);
+				#site.bi('project/_b-project-other/other-btn-right.png');
+			}
+			
+			.texted {
+				left:6em;
+			}
+		}
+	}
+}
