@@ -1,0 +1,45 @@
+.line-grid {
+	position:relative;
+	
+	@keyframes v-grey-line-anim {
+		from {
+			height:0;
+		}
+		to {
+			height:100%;
+		}
+	}
+	
+	.v-grey-line {
+		position:absolute;
+		#fe.h(0);
+		#fe.w(1px);
+		#fe.bg(rgba(196,196,196,0.2));
+		#fe.z(0);
+		animation-duration:@trans-speed * 2;
+		animation-name: v-grey-line-anim;
+		animation-fill-mode:forwards;
+		
+		&.left {
+			left:0;
+			bottom:0;
+			animation-delay:@trans-speed * 2;
+		}
+		&.right {
+			right:0;
+			bottom:0;
+			animation-delay:@trans-speed * 4;
+		}
+		&.center {
+			left:50%;
+			top:0;
+			animation-delay:@trans-speed * 3;
+		}
+		
+	}
+}
+
+.under-line-grid {
+	position:relative;
+	#fe.z(1);
+}

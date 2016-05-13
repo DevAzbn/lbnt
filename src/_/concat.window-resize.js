@@ -1,5 +1,230 @@
-$(function(){var s={xs:{min:0,max:768},sm:{min:767,max:992},md:{min:991,max:1200},lg:{min:1199,max:1e4}},w={xs:{min:0,max:361},sm:{min:360,max:769},md:{min:768,max:961},lg:{min:960,max:1e4}},i="window-width",d="window-height",h=$(window).outerWidth(!0),m=$(window).outerHeight(!0),a=$("html body").eq(0);h<s.xs.max&&(a.hasClass("window-width-sm")&&a.removeClass("window-width-sm"),a.hasClass("window-width-md")&&a.removeClass("window-width-md"),a.hasClass("window-width-lg")&&a.removeClass("window-width-lg"),i="window-width-xs"),h>s.sm.min&&h<s.sm.max&&(a.hasClass("window-width-xs")&&a.removeClass("window-width-xs"),a.hasClass("window-width-md")&&a.removeClass("window-width-md"),a.hasClass("window-width-lg")&&a.removeClass("window-width-lg"),i="window-width-sm"),h>s.md.min&&h<s.md.max&&(a.hasClass("window-width-xs")&&a.removeClass("window-width-xs"),a.hasClass("window-width-sm")&&a.removeClass("window-width-sm"),a.hasClass("window-width-lg")&&a.removeClass("window-width-lg"),i="window-width-md"),h>s.lg.min&&(a.hasClass("window-width-xs")&&a.removeClass("window-width-xs"),a.hasClass("window-width-sm")&&a.removeClass("window-width-sm"),a.hasClass("window-width-md")&&a.removeClass("window-width-md"),i="window-width-lg"),m<w.xs.max&&(a.hasClass("window-height-sm")&&a.removeClass("window-height-sm"),a.hasClass("window-height-md")&&a.removeClass("window-height-md"),a.hasClass("window-height-lg")&&a.removeClass("window-height-lg"),d="window-height-xs"),m>w.sm.min&&m<w.sm.max&&(a.hasClass("window-height-xs")&&a.removeClass("window-height-xs"),a.hasClass("window-height-md")&&a.removeClass("window-height-md"),a.hasClass("window-height-lg")&&a.removeClass("window-height-lg"),d="window-height-sm"),m>w.md.min&&m<w.md.max&&(a.hasClass("window-height-xs")&&a.removeClass("window-height-xs"),a.hasClass("window-height-sm")&&a.removeClass("window-height-sm"),a.hasClass("window-height-lg")&&a.removeClass("window-height-lg"),d="window-height-md"),m>w.lg.min&&(a.hasClass("window-height-xs")&&a.removeClass("window-height-xs"),a.hasClass("window-height-sm")&&a.removeClass("window-height-sm"),a.hasClass("window-height-md")&&a.removeClass("window-height-md"),d="window-height-lg"),$("html body").eq(0).addClass(i).addClass(d)});
-$(function(){$(".scroll-container").trigger("init"),console.log("window-resize .scroll-container init")});
-$(function(){$(".project-slide").each(function(a){var t=$(this),i=JSON.parse(t.attr("data-slide-param")||"{}");t.css({height:t.outerWidth(!0)/i.ratio,"background-image":"url("+i.img+")"})})});
-device.desktop()&&$(function(){$(".b-project-list .project-cont").css({height:$(window).outerHeight(!0)})});
-$(function(){$(".b-project-body").css({height:$(window).outerHeight(!0)})});
+
+/*
+start .fecss window-resize
+*/
+
+	$(
+		function() {
+			
+			var wsize = {
+				xs : {
+					min : 0,
+					max : 768,
+				},
+				sm : {
+					min : 767,
+					max : 992,
+				},
+				md : {
+					min : 991,
+					max : 1200,
+				},
+				lg : {
+					min : 1199,
+					max : 10000,
+				},
+			};
+			
+			var hsize = {
+				xs : {
+					min : 0,
+					max : 361,
+				},
+				sm : {
+					min : 360,
+					max : 769,
+				},
+				md : {
+					min : 768,
+					max : 961,
+				},
+				lg : {
+					min : 960,
+					max : 10000,
+				},
+			};
+			
+			var wcl = 'window-width';
+			var hcl = 'window-height';
+			
+			var w = $(window).outerWidth(true);
+			var h = $(window).outerHeight(true);
+			
+			var body = $('html body').eq(0);
+			
+			/* ----- расчет ширины ----- */
+			
+			if(w < wsize.xs.max) {
+				if(body.hasClass('window-width-sm')) {
+					body.removeClass('window-width-sm');
+				}
+				if(body.hasClass('window-width-md')) {
+					body.removeClass('window-width-md');
+				}
+				if(body.hasClass('window-width-lg')) {
+					body.removeClass('window-width-lg');
+				}
+				wcl = 'window-width-xs';
+			}
+			
+			if(w > wsize.sm.min && w < wsize.sm.max) {
+				if(body.hasClass('window-width-xs')) {
+					body.removeClass('window-width-xs');
+				}
+				if(body.hasClass('window-width-md')) {
+					body.removeClass('window-width-md');
+				}
+				if(body.hasClass('window-width-lg')) {
+					body.removeClass('window-width-lg');
+				}
+				wcl = 'window-width-sm';
+			}
+			
+			if(w > wsize.md.min && w < wsize.md.max) {
+				if(body.hasClass('window-width-xs')) {
+					body.removeClass('window-width-xs');
+				}
+				if(body.hasClass('window-width-sm')) {
+					body.removeClass('window-width-sm');
+				}
+				if(body.hasClass('window-width-lg')) {
+					body.removeClass('window-width-lg');
+				}
+				wcl = 'window-width-md';
+			}
+			
+			if(w > wsize.lg.min) {
+				if(body.hasClass('window-width-xs')) {
+					body.removeClass('window-width-xs');
+				}
+				if(body.hasClass('window-width-sm')) {
+					body.removeClass('window-width-sm');
+				}
+				if(body.hasClass('window-width-md')) {
+					body.removeClass('window-width-md');
+				}
+				wcl = 'window-width-lg';
+			}
+			
+			/* ----- /расчет ширины ----- */
+			
+			
+			/* ----- расчет высоты ----- */
+			
+			if(h < hsize.xs.max) {
+				if(body.hasClass('window-height-sm')) {
+					body.removeClass('window-height-sm');
+				}
+				if(body.hasClass('window-height-md')) {
+					body.removeClass('window-height-md');
+				}
+				if(body.hasClass('window-height-lg')) {
+					body.removeClass('window-height-lg');
+				}
+				hcl = 'window-height-xs';
+			}
+			
+			if(h > hsize.sm.min && h < hsize.sm.max) {
+				if(body.hasClass('window-height-xs')) {
+					body.removeClass('window-height-xs');
+				}
+				if(body.hasClass('window-height-md')) {
+					body.removeClass('window-height-md');
+				}
+				if(body.hasClass('window-height-lg')) {
+					body.removeClass('window-height-lg');
+				}
+				hcl = 'window-height-sm';
+			}
+			
+			if(h > hsize.md.min && h < hsize.md.max) {
+				if(body.hasClass('window-height-xs')) {
+					body.removeClass('window-height-xs');
+				}
+				if(body.hasClass('window-height-sm')) {
+					body.removeClass('window-height-sm');
+				}
+				if(body.hasClass('window-height-lg')) {
+					body.removeClass('window-height-lg');
+				}
+				hcl = 'window-height-md';
+			}
+			
+			if(h > hsize.lg.min) {
+				if(body.hasClass('window-height-xs')) {
+					body.removeClass('window-height-xs');
+				}
+				if(body.hasClass('window-height-sm')) {
+					body.removeClass('window-height-sm');
+				}
+				if(body.hasClass('window-height-md')) {
+					body.removeClass('window-height-md');
+				}
+				hcl = 'window-height-lg';
+			}
+			
+			/* ----- /расчет высоты ----- */
+			
+			
+			$('html body').eq(0).addClass(wcl).addClass(hcl);
+		}
+	);
+
+/*
+end .fecss window-resize
+*/
+
+	
+	$(
+		function() {
+			
+			$('.scroll-container').trigger('init');
+			console.log('window-resize .scroll-container init');
+			
+		}
+	);
+	
+$(function(){
+	
+	$('.b-project-container').trigger('fecss.b-project-container.init');
+	
+});
+
+$(function(){
+	
+	$('.project-slide').each(function(index){
+		
+		var block = $(this);
+		var param = JSON.parse(block.attr('data-slide-param')||'{}');
+		
+		block.css({
+			'height' : (block.outerWidth(true) / param.ratio),
+			'background-image' : 'url(' + param.img + ')',
+		})
+		
+	});
+	
+});
+
+
+	
+	$(function(){
+		
+		if(device.desktop()) {
+			
+			$('.b-project-list .project-cont').css({
+				height : $(window).outerHeight(true),
+			});
+			
+		}
+		
+	});
+
+
+$(function(){
+	
+	$('.b-project-body').css({
+		height : $(window).outerHeight(true),
+	})
+	
+});

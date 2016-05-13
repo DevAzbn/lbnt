@@ -1,7 +1,6 @@
-if(device.desktop() && $('.wheel-block').size()) {
-
-	$(function() {
-		
+$(function() {
+	
+	if(device.desktop() && $('.wheel-block').size()) {
 		var scrolling = false;
 		var _step = 0;
 		
@@ -173,7 +172,7 @@ if(device.desktop() && $('.wheel-block').size()) {
 			}
 			*/
 		});
-		
-	});
-
-}
+	
+	}
+	
+});

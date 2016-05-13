@@ -3,49 +3,6 @@
 	#fe.bg(#ffffff);
 	#fe.color(@c-text);
 	
-	.line-grid {
-		position:relative;
-		padding:12em 0;
-		
-		@keyframes v-grey-line-anim {
-			from {
-				height:0;
-			}
-			to {
-				height:100%;
-			}
-		}
-		
-		.v-grey-line {
-			position:absolute;
-			#fe.h(0);
-			#fe.w(1px);
-			#fe.bg(#c4c4c4);
-			
-			z-index:0;
-			animation-duration:@trans-speed * 2;
-			animation-name: v-grey-line-anim;
-			animation-fill-mode:forwards;
-			
-			&.left {
-				left:0;
-				bottom:0;
-				animation-delay:@trans-speed * 2;
-			}
-			&.right {
-				right:0;
-				top:0;
-				animation-delay:@trans-speed * 4;
-			}
-			&.center {
-				left:50%;
-				bottom:0;
-				animation-delay:@trans-speed * 3;
-			}
-			
-		}
-	}
-	
 	@keyframes welcome-title-stick {
 		from {
 			left:-300%;

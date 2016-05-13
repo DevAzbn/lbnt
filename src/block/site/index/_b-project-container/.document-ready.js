@@ -56,4 +56,3 @@ $(document.body).on('fecss.b-project-container.init', '.b-project-container', {}
 	nav.find('a.item').eq(0).trigger('click.fecss.b-project-container.nav-control.item');
 	
 });
-$('.b-project-container').trigger('fecss.b-project-container.init');
