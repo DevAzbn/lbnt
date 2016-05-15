@@ -1,4 +1,29 @@
 .b-service-portfolio {
-	#fe.h(27em);
+	display:block !important;
 	
+	.owl-container {
+		max-width:100%;
+		#fe.w(100%);
+		
+		.owl-carousel {
+			max-width:100%;
+			#fe.w(100%);
+			
+			.owl-controls {
+				display:none;
+				
+				@media @media-size-xs {
+					display: block;
+				}
+			}
+			.item {
+				display:block;
+				#fe.h(27em);
+				#fe.bpos();
+				#fe.brep();
+				#fe.bsize(cover);
+			}
+			
+		}
+	}
 }

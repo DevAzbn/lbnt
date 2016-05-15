@@ -1441,6 +1441,55 @@
 	}
 }
 
+.b-news-item-body {
+	
+	.news-item-cont {
+		margin:0 auto;
+		max-width:945px;
+		#fe.w(100%);
+		
+		.title {
+			position:relative;
+			padding:1em 0;
+			//#fe.ff(pnb);
+			#fe.bold();
+			#fe.size(3.6em);
+			
+			&:before {
+				content:'';
+				position:absolute;
+				left:0;
+				bottom:0;
+				#fe.h(2px);
+				#fe.w(54px);
+				#fe.bg(#2f9981);
+			}
+		}
+		.date {
+			padding:2.2em 0 3em;
+			#fe.color(#656565);
+			#fe.size(1.8em);
+		}
+		.main_info {
+			
+		}
+		.blog-gallery{
+			margin:4em 0;
+			#fe.h(600px);
+		}
+	}
+	
+}
+.b-news-item-header {
+	margin-top:15em;
+	
+	.news-item-img-cont {
+		#fe.bpos();
+		#fe.brep();
+		#fe.bsize(cover);
+	}
+	
+}
 body {
 	
 	&[class*='theme-'], *[class*='theme-'] {
@@ -1505,9 +1554,10 @@ body {
 }
 
 .sandbox {
-	max-width:670px;
 	
 	&.style-lbnt-service {
+		max-width:670px;
+		
 		#fe.color(#1f1f1f);
 		
 		.simple {
@@ -1528,6 +1578,46 @@ body {
 			#fe.uppercase();
 			#fe.size(1.8em);
 			#fe.color(#2f9981);
+		}
+	}
+	
+	&.style-lbnt-news-item {
+		#fe.color(#1f1f1f);
+		
+		h1,h2,h3,h4,h5,h6 {
+			margin-bottom:1.25em;
+			#fe.size(2em);
+			#fe.ff(pnb);
+		}
+		
+		p {
+			#fe.size(2em);
+		}
+		
+		blockquote {
+			border-left:2px #2f9981 solid;
+			padding-left:1.5em;
+			margin-bottom:1.25em;
+			#fe.size(2em);
+			#fe.lh(1.5em);
+		}
+		
+		ul {
+			list-style-type: disc;
+			.mp0();
+			padding-left:1em;
+			margin-bottom:2em;
+			#fe.size(2em);
+			#fe.lh(2em);
+			#fe.color(#2f9981);
+			
+			li {
+				.mp0();
+				
+				span {
+					#fe.color(#1f1f1f);
+				}
+			}
 		}
 	}
 }
@@ -1793,6 +1883,7 @@ body {
 }
 .page-container {
 	position:relative;
+	overflow-x: hidden;
 }
 .project-slide {
 	transition:all @trans-speed ease;
@@ -2216,6 +2307,31 @@ body {
 	
 }
 .b-service-portfolio {
-	#fe.h(27em);
+	display:block !important;
 	
+	.owl-container {
+		max-width:100%;
+		#fe.w(100%);
+		
+		.owl-carousel {
+			max-width:100%;
+			#fe.w(100%);
+			
+			.owl-controls {
+				display:none;
+				
+				@media @media-size-xs {
+					display: block;
+				}
+			}
+			.item {
+				display:block;
+				#fe.h(27em);
+				#fe.bpos();
+				#fe.brep();
+				#fe.bsize(cover);
+			}
+			
+		}
+	}
 }
