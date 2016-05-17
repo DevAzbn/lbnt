@@ -8,14 +8,16 @@ $(function(){
 		var block = btn.closest('.b-about-cont');
 		
 		block
-			.removeClass('active')
+			
 			.css({
-				'top' : '-' + block.outerHeight(true) + 'px',
-			})
+				'top' : '-' + block.outerHeight(true) + 15 + 'px',
+			}).removeClass('active')
 		;
 		
-		$('.page-container').removeClass('filter blur');
-		$('.b-top-menu').removeClass('filter blur');
+		if(!screenJS.isXS()) {
+			$('.page-container').removeClass('filter blur');
+			$('.b-top-menu').removeClass('filter blur');
+		}
 		
 	});
 	$('.b-about-cont .close-btn').trigger('click.fecss.b-about-cont.close-btn');

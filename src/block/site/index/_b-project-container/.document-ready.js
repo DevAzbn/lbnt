@@ -35,7 +35,7 @@ $(document.body).on('fecss.b-project-container.init', '.b-project-container', {}
 	
 	block.css({
 		height : $(window).outerHeight(true),
-	})
+	});
 	
 	nav.empty();
 	

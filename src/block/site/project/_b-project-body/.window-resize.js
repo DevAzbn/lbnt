@@ -1,8 +1,10 @@
 
 $(function(){
 	
-	$('.b-project-body').css({
-		height : $(window).outerHeight(true),
-	})
+	if(!screenJS.isXS()) {
+		$('.b-project-body').css({
+			height : $(window).outerHeight(true),
+		})
+	}
 	
 });

@@ -5,7 +5,10 @@ $(document.body).on('fecss.b-news-item-header.init', '.b-news-item-header', {}, 
 	var block = $(this);
 	var slide = block.find('.news-item-img-cont');
 	
-	slide.css({
-		height : $(window).outerHeight(true),
-	})
+	if(!screenJS.isXS()) {
+		slide.css({
+			height : $(window).outerHeight(true),
+		});
+	}
+	
 });

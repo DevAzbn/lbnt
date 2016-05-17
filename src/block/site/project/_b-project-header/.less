@@ -1,9 +1,21 @@
 .b-project-header {
 	padding:15em 0 4em;
 	
+	@media @media-size-xs {
+		& {
+			padding-top:10em;
+		}
+	}
+	
 	.title {
 		#fe.ff(pnb);
 		#fe.size(4.8em);
+		
+		@media @media-size-xs {
+			& {
+				#fe.size(2.8em);
+			}
+		}
 	}
 	
 	.title-stick {

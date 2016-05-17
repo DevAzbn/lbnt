@@ -13,6 +13,13 @@
 		&.active {
 			top:0%;
 		}
+		
+		@media @media-size-xs {
+			& {
+				#fe.bsize(contain);
+				#fe.h(100%);
+			}
+		}
 	}
 	
 	.nav-control {
@@ -21,7 +28,6 @@
 		top:0;
 		bottom:0;
 		text-align:right;
-		
 		#fe.w(4em);
 		
 		.item-cell {
@@ -54,6 +60,12 @@
 				&:after {
 					#fe.w(100%);
 				}
+			}
+		}
+		
+		@media @media-size-xs {
+			& {
+				right:1em;
 			}
 		}
 	}

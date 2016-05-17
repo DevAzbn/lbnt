@@ -32,6 +32,17 @@
 			animation-delay:@trans-speed * 1;
 			animation-fill-mode:forwards;
 		}
+		
+		@media @media-size-xs {
+			& {
+				#fe.size(3em);
+				margin-bottom:2em;
+				
+				&:before {
+					bottom:-1em;
+				}
+			}
+		}
 	}
 	.welcome-about {
 		max-width:670px;
@@ -45,6 +56,12 @@
 			&:hover {
 				#fe.underline(none);
 			}
+		}
+	}
+	
+	@media @media-size-xs {
+		& {
+			padding:0 1em;
 		}
 	}
 }

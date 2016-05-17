@@ -12,6 +12,12 @@
 			#fe.bold();
 			#fe.size(3.6em);
 			
+			@media @media-size-xs {
+				& {
+					#fe.size(2.4em);
+				}
+			}
+			
 			&:before {
 				content:'';
 				position:absolute;
@@ -26,6 +32,12 @@
 			padding:2.2em 0 3em;
 			#fe.color(#656565);
 			#fe.size(1.8em);
+			
+			@media @media-size-xs {
+				& {
+					padding:1.5em 0 2.5em;
+				}
+			}
 		}
 		.main_info {
 			
@@ -33,6 +45,12 @@
 		.blog-gallery{
 			margin:4em 0;
 			#fe.h(600px);
+			
+			@media @media-size-xs {
+				& {
+					#fe.h(210px);
+				}
+			}
 		}
 	}
 	

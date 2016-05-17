@@ -1,10 +1,22 @@
 .b-news-item-header {
 	margin-top:15em;
 	
+	@media @media-size-xs {
+		& {
+			margin-top:10em;
+		}
+	}
+	
 	.news-item-img-cont {
 		#fe.bpos();
 		#fe.brep();
 		#fe.bsize(cover);
+		
+		@media @media-size-xs {
+			& {
+				height:210px;
+			}
+		}
 	}
 	
 }

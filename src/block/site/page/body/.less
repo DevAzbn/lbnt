@@ -79,6 +79,12 @@ body {
 		}
 		.big-title {
 			#fe.size(3.6em);
+			
+			@media @media-size-xs {
+				& {
+					#fe.size(2.8em);
+				}
+			}
 		}
 		.sub-title {
 			margin-top:2em;
@@ -157,5 +163,11 @@ body {
 	
 	.window-height-lg & {
 		padding:24em 0;
+	}
+	
+	@media @media-size-xs {
+		& {
+			padding-bottom:6em;
+		}
 	}
 }

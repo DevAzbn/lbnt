@@ -6,10 +6,17 @@ $(function(){
 		var block = $(this);
 		var param = JSON.parse(block.attr('data-slide-param')||'{}');
 		
-		block.css({
-			'height' : (block.outerWidth(true) / param.ratio),
-			'background-image' : 'url(' + param.img + ')',
-		})
+		if(screenJS.isXS()) {
+			block.css({
+				'height' : $(window).outerHeight(true),
+				'background-image' : 'url(' + param.img + ')',
+			});
+		} else {
+			block.css({
+				'height' : (block.outerWidth(true) / param.ratio),
+				'background-image' : 'url(' + param.img + ')',
+			});
+		}
 		
 	});
 	

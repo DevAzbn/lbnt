@@ -6,6 +6,12 @@
 	#fe.z(2);
 	#fe.bg(#f1f1f1);
 	
+	@media @media-size-xs {
+		& {
+			padding:4em 0;
+		}
+	}
+	
 	.text-tabber .item {
 		overflow-x:hidden;
 		transition:all @trans-speed ease;
@@ -15,6 +21,14 @@
 		&.active {
 			margin-left:0;
 			position:relative;
+		}
+		
+		@media @media-size-xs {
+			& {
+				margin-left:0;
+				position:relative;
+				margin-bottom:4em;
+			}
 		}
 	}
 }
