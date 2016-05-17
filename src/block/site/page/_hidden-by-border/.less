@@ -1,0 +1,19 @@
+.hidden-by-border {
+	overflow-x:hidden;
+	
+	@keyframes show-from-left-anim {
+		from {
+			margin-left:-100%;
+		}
+		to {
+			margin-left:0%;
+		}
+	}
+	
+	.show-from-left {
+		animation-duration:@trans-speed * 3;
+		animation-name: show-from-left-anim;
+		//animation-delay:@trans-speed * 2;
+		animation-fill-mode:forwards;
+	}
+}

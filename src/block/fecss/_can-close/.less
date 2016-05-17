@@ -1,5 +1,6 @@
 .can-close {
 	position:relative;
+	transition:all @trans-speed ease;
 	/*
 	transform-origin:center center;
 	transition:all @trans-speed ease;
@@ -12,16 +13,17 @@
 		visibility:none;
 		position:fixed;
 		top:-1000%;
-		*/
+		
 		display:none;
+		*/
 	}
 	
 	.close-btn {
 		position:absolute;
-		right:1em;
-		top:1em;
-		width:1em;
-		height:1em;
+		right:2em;
+		top:2em;
+		width:2em;
+		height:2em;
 		background-size:cover;
 		#fe.brep();
 		#fe.bpos();

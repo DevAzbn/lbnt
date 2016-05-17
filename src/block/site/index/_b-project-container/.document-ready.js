@@ -1,4 +1,4 @@
-$(document.body).on('fecss.b-project-container.item.setActive', '.b-project-container', {}, function(event, _index){
+$(document.body).on('fecss.b-project-container.item.setActive', '.b-project-container', {}, function(event, _index, callback){
 	event.preventDefault();
 	
 	var block = $(this);
@@ -11,14 +11,18 @@ $(document.body).on('fecss.b-project-container.item.setActive', '.b-project-cont
 	nav.find('.item').removeClass('active');
 	nav.find('.item').eq(_index).addClass('active');
 	
+	if(callback) {
+		callback();
+	}
+	
 });
 
-$(document.body).on('click.fecss.b-project-container.nav-control.item', '.b-project-container .nav-control .item', {}, function(event){
+$(document.body).on('click.fecss.b-project-container.nav-control.item', '.b-project-container .nav-control .item', {}, function(event, callback){
 	event.preventDefault();
 	
 	var btn = $(this);
 	
-	btn.closest('.b-project-container').trigger('fecss.b-project-container.item.setActive', [btn.index()]);
+	btn.closest('.b-project-container').trigger('fecss.b-project-container.item.setActive', [btn.index(), callback]);
 	
 });
 

@@ -401,6 +401,7 @@
 }
 .can-close {
 	position:relative;
+	transition:all @trans-speed ease;
 	/*
 	transform-origin:center center;
 	transition:all @trans-speed ease;
@@ -413,16 +414,17 @@
 		visibility:none;
 		position:fixed;
 		top:-1000%;
-		*/
+		
 		display:none;
+		*/
 	}
 	
 	.close-btn {
 		position:absolute;
-		right:1em;
-		top:1em;
-		width:1em;
-		height:1em;
+		right:2em;
+		top:2em;
+		width:2em;
+		height:2em;
 		background-size:cover;
 		#fe.brep();
 		#fe.bpos();
@@ -1414,14 +1416,14 @@
 		&:before {
 			content:'';
 			position:absolute;
-			left:-300%;
+			left:-100%;
 			bottom:-0.5em;
 			#fe.w(60px);
 			#fe.h(4px);
 			#fe.bg(#009a81);
-			animation-duration:@trans-speed * 2;
+			animation-duration:@trans-speed * 1.5;
 			animation-name: welcome-title-stick;
-			animation-delay:@trans-speed * 2;
+			animation-delay:@trans-speed * 1;
 			animation-fill-mode:forwards;
 		}
 	}
@@ -1620,10 +1622,72 @@ body {
 			}
 		}
 	}
+	
+	&.style-lbnt-about {
+		#fe.color(#1f1f1f);
+		
+		h1,h2,h3,h4,h5,h6 {
+			margin-bottom:1.5em;
+			#fe.ff(pnb);
+			#fe.size(1.5em);
+			#fe.uppercase();
+		}
+		p {
+			#fe.size(1.5em);
+		}
+		a {
+			#fe.underline();
+			#fe.color(#1f1f1f);
+			
+			&:hover {
+				#fe.underline(none);
+			}
+		}
+	}
 }
 
 .padding-12em {
 	padding:12em 0;
+	
+	.window-height-lg & {
+		padding:24em 0;
+	}
+}
+.b-about-cont {
+	position:fixed;
+	bottom:100%;
+	left:0;
+	transition:all @trans-speed ease;
+	padding:5em 0;
+	box-shadow:1px 7px 7px rgba(0, 0, 0, 0.1);
+	#fe.w(100%);
+	#fe.bg(#ffffff);
+	#fe.z(10);
+	
+	.close-btn {
+		position:absolute;
+		right:2em;
+		top:2em;
+		width:2em;
+		height:2em;
+		background-size:cover;
+		#fe.brep();
+		#fe.bpos();
+		#fe.bi('.can-close/close-btn.png');
+	}
+	
+	&.active {
+		top:0;
+	}
+	
+	.texted {
+	
+	}
+	.imaged {
+		img {
+			max-height:300px;
+		}
+	}
 }
 .b-order-service {
 	position:relative;
@@ -1727,7 +1791,7 @@ body {
 	.go-to-header {
 		position:absolute;
 		display:block;
-		left:4em;
+		left:2em;
 		bottom:4em;
 		border-radius:50%;
 		transition:background-color @trans-speed / 2 ease;
@@ -1738,6 +1802,12 @@ body {
 		#fe.bpos();
 		#fe.brep();
 		#fe.lh(3em);
+		
+		@media @media-size-lg {
+			& {
+				left:2em;
+			}
+		}
 		
 		& > span {
 			@size:4px;
@@ -1760,13 +1830,19 @@ body {
 }
 .b-top-menu {
 	position:fixed;
+	transition:all @trans-speed ease;
 	left:0;
 	top:0;
 	padding:2em 0;
 	#fe.w(100%);
-	#fe.bg(transparent);
+	//#fe.bg(transparent);
+	#fe.bg(rgba(255,255,255,0.15));
 	#fe.color(@c-text);
 	#fe.z(5);
+	
+	&.over-screen {
+		top:-20%;
+	}
 	
 	.site-menu, .contact-menu {
 		#fe.lh(13px);
@@ -1801,10 +1877,9 @@ body {
 		
 		a {
 			
-			
 			&.order-service-btn {
 				display:inline-block;
-				padding:0 20px 0;
+				padding:0 2.5em 0;
 				border-radius:15px;
 				transition:all @trans-speed ease;
 				#fe.bg(#2f9981);
@@ -1814,6 +1889,10 @@ body {
 				&:hover {
 					#fe.bg(transparent);
 					#fe.color(#2f9981);
+					
+					&:before {
+						content:none;
+					}
 				}
 			}
 		}
@@ -1828,12 +1907,49 @@ body {
 	}
 	
 	a {
+		display:inline-block;
+		position:relative;
+		padding:1em 0;
 		#fe.underline(none);
 		
-		&:hover {
-			#fe.underline();
+		&:before {
+			content:'';
+			position:absolute;
+			left:0;
+			bottom:33.33333333%;
+			transition:all @trans-speed ease;
+			#fe.h(1px);
+			#fe.w(0);
+			#fe.bg(#2f9981);
 		}
 		
+		&:hover {
+			//#fe.underline();
+			
+			&:before {
+				#fe.w(100%);
+			}
+		}
+		
+	}
+}
+.hidden-by-border {
+	overflow-x:hidden;
+	
+	@keyframes show-from-left-anim {
+		from {
+			margin-left:-100%;
+		}
+		to {
+			margin-left:0%;
+		}
+	}
+	
+	.show-from-left {
+		animation-duration:@trans-speed * 3;
+		animation-name: show-from-left-anim;
+		//animation-delay:@trans-speed * 2;
+		animation-fill-mode:forwards;
 	}
 }
 .line-grid {
@@ -1884,6 +2000,7 @@ body {
 .page-container {
 	position:relative;
 	overflow-x: hidden;
+	transition:all @trans-speed ease;
 }
 .project-slide {
 	transition:all @trans-speed ease;
@@ -2242,11 +2359,24 @@ body {
 	}
 }
 .b-service-body {
+	transition:all @trans-speed ease;
 	margin-top:15px;
 	padding:6em 0 10em;
 	position:relative;
 	#fe.z(2);
 	#fe.bg(#f1f1f1);
+	
+	.text-tabber .item {
+		overflow-x:hidden;
+		transition:all @trans-speed ease;
+		margin-left:-100%;
+		position:absolute;
+		
+		&.active {
+			margin-left:0;
+			position:relative;
+		}
+	}
 }
 .b-service-header {
 	padding:15em 0 0;

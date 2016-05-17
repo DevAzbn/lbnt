@@ -128,8 +128,34 @@ body {
 			}
 		}
 	}
+	
+	&.style-lbnt-about {
+		#fe.color(#1f1f1f);
+		
+		h1,h2,h3,h4,h5,h6 {
+			margin-bottom:1.5em;
+			#fe.ff(pnb);
+			#fe.size(1.5em);
+			#fe.uppercase();
+		}
+		p {
+			#fe.size(1.5em);
+		}
+		a {
+			#fe.underline();
+			#fe.color(#1f1f1f);
+			
+			&:hover {
+				#fe.underline(none);
+			}
+		}
+	}
 }
 
 .padding-12em {
 	padding:12em 0;
+	
+	.window-height-lg & {
+		padding:24em 0;
+	}
 }

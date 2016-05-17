@@ -1,12 +1,18 @@
 .b-top-menu {
 	position:fixed;
+	transition:all @trans-speed ease;
 	left:0;
 	top:0;
 	padding:2em 0;
 	#fe.w(100%);
-	#fe.bg(transparent);
+	//#fe.bg(transparent);
+	#fe.bg(rgba(255,255,255,0.15));
 	#fe.color(@c-text);
 	#fe.z(5);
+	
+	&.over-screen {
+		top:-20%;
+	}
 	
 	.site-menu, .contact-menu {
 		#fe.lh(13px);
@@ -41,10 +47,9 @@
 		
 		a {
 			
-			
 			&.order-service-btn {
 				display:inline-block;
-				padding:0 20px 0;
+				padding:0 2.5em 0;
 				border-radius:15px;
 				transition:all @trans-speed ease;
 				#fe.bg(#2f9981);
@@ -54,6 +59,10 @@
 				&:hover {
 					#fe.bg(transparent);
 					#fe.color(#2f9981);
+					
+					&:before {
+						content:none;
+					}
 				}
 			}
 		}
@@ -68,10 +77,28 @@
 	}
 	
 	a {
+		display:inline-block;
+		position:relative;
+		padding:1em 0;
 		#fe.underline(none);
 		
+		&:before {
+			content:'';
+			position:absolute;
+			left:0;
+			bottom:33.33333333%;
+			transition:all @trans-speed ease;
+			#fe.h(1px);
+			#fe.w(0);
+			#fe.bg(#2f9981);
+		}
+		
 		&:hover {
-			#fe.underline();
+			//#fe.underline();
+			
+			&:before {
+				#fe.w(100%);
+			}
 		}
 		
 	}

@@ -1,0 +1,36 @@
+.b-about-cont {
+	position:fixed;
+	bottom:100%;
+	left:0;
+	transition:all @trans-speed ease;
+	padding:5em 0;
+	box-shadow:1px 7px 7px rgba(0, 0, 0, 0.1);
+	#fe.w(100%);
+	#fe.bg(#ffffff);
+	#fe.z(10);
+	
+	.close-btn {
+		position:absolute;
+		right:2em;
+		top:2em;
+		width:2em;
+		height:2em;
+		background-size:cover;
+		#fe.brep();
+		#fe.bpos();
+		#fe.bi('.can-close/close-btn.png');
+	}
+	
+	&.active {
+		top:0;
+	}
+	
+	.texted {
+	
+	}
+	.imaged {
+		img {
+			max-height:300px;
+		}
+	}
+}

@@ -10,8 +10,8 @@ $(function(){
 			items:4,
 			animateIn:true,
 			animateOut: true,
-			autoplay:true,
-			autoplayTimeout:3000,
+			autoplay:false,
+			//autoplayTimeout:3000,
 			responsiveClass:true,
 			responsive:{
 				0:{
@@ -37,4 +37,15 @@ $(function(){
 		
 	}
 	
-})
+});
+
+
+$(function(){
+	
+	$('html, body').animate({
+		scrollTop: (0)
+	}, 0, function() {
+		
+	});
+	
+});

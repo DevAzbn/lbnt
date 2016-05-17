@@ -1,8 +1,20 @@
 $(function() {
 	
 	if(device.desktop() && $('.wheel-block').size()) {
-		var scrolling = false;
+		var scrolling;
 		var _step = 0;
+		
+		var can_scroll = function(timeout){
+			if(timeout) {
+				setTimeout(function(){
+					scrolling = false;
+				}, timeout);
+			} else {
+				scrolling = false;
+			}
+		};
+		
+		can_scroll();
 		
 		$('.wheel-block').each(function(index){
 			$(this).attr('data-wheel-step', index);
@@ -23,7 +35,7 @@ $(function() {
 		$(document.body).on('fecss.wheel-block.set', null, {}, function(event, param){
 			event.preventDefault();
 			
-			scrolling = true;
+			//scrolling = true;
 			
 			console.log('body trigger:fecss.wheel-block.set: ' + JSON.stringify(param));
 			
@@ -46,7 +58,7 @@ $(function() {
 					var active_child = active.find('.wheel-block-child.active');
 					var active_child_step = parseInt(active_child.attr('data-wheel-step'));
 					
-					console.log('body trigger:fecss.wheel-block.set: (wheel-block-child) ' + JSON.stringify(param));
+					//console.log('body trigger:fecss.wheel-block.set: (wheel-block-child) ' + JSON.stringify(param));
 					
 					if(param.diff > 0) {
 						
@@ -63,9 +75,12 @@ $(function() {
 						//active.trigger('fecss.b-project-container.item.setActive', [parseInt(block_child.attr('data-wheel-step'))]);
 						
 						var nav = active.find('.nav-control .item-cell');
-						nav.find('a.item').eq(parseInt(block_child.attr('data-wheel-step'))).trigger('click.fecss.b-project-container.nav-control.item');
+						nav.find('a.item').eq(parseInt(block_child.attr('data-wheel-step'))).trigger('click.fecss.b-project-container.nav-control.item', [function(){
+							can_scroll(451);
+							//alert();
+						}]);
 						
-						scrolling = false;
+						//scrolling = false;
 						
 					} else {
 						
@@ -89,12 +104,12 @@ $(function() {
 								}
 								block.addClass('active');
 								$(document.body).attr('data-wheel-step', block.attr('data-wheel-step'));
-								scrolling = false;
+								can_scroll();
 							});
 							
 						} else {
 							
-							scrolling = false;
+							can_scroll();
 							
 						}
 						
@@ -126,12 +141,12 @@ $(function() {
 							}
 							block.addClass('active');
 							$(document.body).attr('data-wheel-step', block.attr('data-wheel-step'));
-							scrolling = false;
+							can_scroll();
 						});
 						
 					} else {
 						
-						scrolling = false;
+						can_scroll();
 						
 					}
 					
@@ -144,7 +159,7 @@ $(function() {
 				block.addClass('active');
 				$(document.body).attr('data-wheel-step', block.attr('data-wheel-step'));
 				
-				scrolling = false;
+				can_scroll();
 				
 			}
 			
@@ -161,16 +176,10 @@ $(function() {
 			if(scrolling) {
 				return;
 			} else {
+				scrolling = true;
 				$(document.body).trigger('fecss.wheel-block.set', [{diff:event.originalEvent.wheelDelta}]);
 			}
 			
-			/*
-			if (event.originalEvent.wheelDelta > 0 || event.originalEvent.detail < 0) {
-				$(document.body).trigger('fecss.wheel-block.set', [{diff:event.originalEvent.wheelDelta}]);
-			} else { 
-				$(document.body).trigger('fecss.wheel-block.set', [{diff:event.originalEvent.wheelDelta}]);
-			}
-			*/
 		});
 	
 	}
