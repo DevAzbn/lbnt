@@ -2,6 +2,12 @@
 	position:relative;
 	#fe.h(15.5em);
 	
+	@media @media-size-xs {
+		& {
+			#fe.h(8.5em);
+		}
+	}
+	
 	.other-btn {
 		position:absolute;
 		top:0;
@@ -22,6 +28,12 @@
 				transition:all @trans-speed ease;
 				#fe.brep();
 				#fe.h(100%);
+				
+				@media @media-size-xs {
+					& {
+						#fe.bsize(35%);
+					}
+				}
 			}
 			
 			.imaged {
@@ -71,6 +83,7 @@
 				#fe.w(50%);
 				#fe.bpos(left center);
 				#site.bi('project/_b-project-other/other-btn-left.png');
+				
 			}
 			
 			.texted {
@@ -106,6 +119,12 @@
 				#fe.bpos();
 				#fe.brep();
 				#site.bi('project/_b-project-other/other-btn-list.png');
+				
+				@media @media-size-xs {
+					& {
+						#fe.bsize(75%);
+					}
+				}
 			}
 		}
 		&.right {

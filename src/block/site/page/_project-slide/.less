@@ -1,6 +1,6 @@
 .project-slide {
 	transition:all @trans-speed ease;
-	padding:12em 0;
+	padding:15em 0;
 	#fe.w(100%);
 	#fe.bpos();
 	#fe.brep();
@@ -8,8 +8,27 @@
 	
 	@media @media-size-lg {
 		& {
-			padding:15em 0;
+			padding:19em 0;
 		}
+	}
+	
+	.active &.active {
+		.hidden-by-border {
+			display:block;
+			
+			.show-from-left {
+				margin-bottom:2em;
+				//animation-duration:@trans-speed * 2;
+				animation-delay:@trans-speed * 1;
+				//animation-name: show-from-left-anim;
+				//animation-delay:@trans-speed * 2;
+				//animation-fill-mode:forwards;
+			}
+		}
+	}
+	
+	.hidden-by-border {
+		display:none;
 	}
 	
 	.title {
