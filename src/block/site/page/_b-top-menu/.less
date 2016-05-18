@@ -49,6 +49,10 @@
 			display:none;
 		}
 		
+		@media @media-size-sm {
+			display:none;
+		}
+		
 		a {
 			
 			&.order-service-btn {
@@ -76,6 +80,10 @@
 		float:right;
 		
 		@media @media-size-xs {
+			display:none;
+		}
+		
+		@media @media-size-sm {
 			display:none;
 		}
 		
@@ -229,9 +237,19 @@
 		@media @media-size-xs {
 			display:block;
 		}
+		
+		@media @media-size-sm {
+			display:block;
+		}
 	}
 	
 	@media @media-size-xs {
+		& {
+			#fe.bg(#ffffff);
+		}
+	}
+	
+	@media @media-size-sm {
 		& {
 			#fe.bg(#ffffff);
 		}

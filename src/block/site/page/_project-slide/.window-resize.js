@@ -6,7 +6,7 @@ $(function(){
 		var block = $(this);
 		var param = JSON.parse(block.attr('data-slide-param')||'{}');
 		
-		if(screenJS.isXS()) {
+		if(screenJS.isXS() || screenJS.isSM() || screenJS.isMD()) {
 			block.css({
 				'height' : $(window).outerHeight(true),
 				'background-image' : 'url(' + param.img + ')',

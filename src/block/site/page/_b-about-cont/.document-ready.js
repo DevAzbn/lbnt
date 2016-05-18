@@ -14,9 +14,9 @@ $(function(){
 			}).removeClass('active')
 		;
 		
-		if(!screenJS.isXS()) {
-			$('.page-container').removeClass('filter blur');
-			$('.b-top-menu').removeClass('filter blur');
+		if(!screenJS.isXS() && !screenJS.isSM()) {
+			$('.page-container').removeClass('blur');
+			$('.b-top-menu').removeClass('blur');
 		}
 		
 	});

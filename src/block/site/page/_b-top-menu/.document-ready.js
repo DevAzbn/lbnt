@@ -31,9 +31,9 @@ $(function(){
 		
 		block.addClass('active');
 		
-		if(!screenJS.isXS()) {
-			$('.page-container').addClass('filter blur');
-			$('.b-top-menu').addClass('filter blur');
+		if(!screenJS.isXS() && !screenJS.isSM()) {
+			$('.page-container').addClass('blur');
+			$('.b-top-menu').addClass('blur');
 		}
 		
 	});
@@ -54,8 +54,8 @@ $(function(){
 	$(document.body).on('click.fecss.mobile-menu.menu-btn', '.mobile-menu .menu-btn', {}, function(event){
 		event.preventDefault();
 		
-		$('.page-container').toggleClass('filter blur');
-		//$('.b-top-menu').toggleClass('filter blur');
+		$('.page-container').toggleClass('blur');
+		//$('.b-top-menu').toggleClass('blur');
 		
 	});
 	
