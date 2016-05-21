@@ -42,10 +42,14 @@ $(function(){
 
 $(function(){
 	
+	/*
 	$('html, body').animate({
-		scrollTop: (0)
-	}, 0, function() {
+		scrollTop: (0 + 'px')
+	}, 25, function() {
 		
 	});
+	*/
+	
+	$(document.body).trigger('fecss.wheel-block.set');
 	
 });

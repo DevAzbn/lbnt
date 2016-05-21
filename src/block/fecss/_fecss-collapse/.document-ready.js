@@ -8,4 +8,12 @@ $(document.body).on('click.fecss.fecss-collapse.collapser', '.fecss-collapse .co
 	var collapse = btn.closest('.fecss-collapse');
 	collapse.toggleClass('active');
 	
+	/*
+	if(screenJS.isXS()) {
+		collapse.find('.collapsing').css({
+			height : $(window).outerHeight(true),
+		});
+	}
+	*/
+	
 });

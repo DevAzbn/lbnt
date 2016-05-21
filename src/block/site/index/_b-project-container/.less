@@ -1,9 +1,14 @@
 .b-project-container {
 	position:relative;
 	overflow:hidden;
-	#fe.bg(@c-l-green);
-	
 	height:1080px;
+	#fe.bg(#ffffff);
+	
+	@media @media-size-xs {
+		& {
+			height:initial;
+		}
+	}
 	
 	.project-slide {
 		position:absolute;
@@ -16,8 +21,9 @@
 		
 		@media @media-size-xs {
 			& {
-				#fe.bsize(contain);
-				#fe.h(100%);
+				position:relative;
+				#fe.bsize(cover);
+				#fe.h(180px);
 			}
 		}
 		
@@ -72,6 +78,7 @@
 		
 		@media @media-size-xs {
 			& {
+				display:none;
 				right:1em;
 			}
 		}

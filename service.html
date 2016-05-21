@@ -79,7 +79,7 @@
 	
 	<div class="site-menu" >
 		<ul >
-			<li ><a href="index.html" >Главная</a></li>
+			<li class="mainpage-link" ><a href="index.html" >Главная</a></li>
 			<li ><a href="service.html" >Услуги и цены</a></li>
 			<li ><a href="portfolio.html" >Портфолио</a></li>
 			<li ><a class="show-b-about-cont" href="#about" >Обо мне</a></li>
@@ -112,11 +112,13 @@
 		<div class="collapsing menu-list" >
 			<ul >
 				<li ><a href="index.html" >Главная</a></li>
-				<li><a href="service.html" >Услуги и цены</a></li>
-				<li><a href="portfolio.html" >Портфолио</a></li>
+				<li ><a href="service.html" >Услуги и цены</a></li>
+				<li ><a href="portfolio.html" >Портфолио</a></li>
 				<li ><a class="show-b-about-cont" href="#about" >Обо мне</a></li>
-				<li><a href="mailto:hello@labintsev.ru" >hello@labintsev.ru</a></li>
-				<li><a href="tel:+79208108847" >+7 (920) 810-88-47</a></li>
+				
+				<li class="mobile-menu-email" ><a href="mailto:hello@labintsev.ru" >hello@labintsev.ru</a></li>
+				<li class="mobile-menu-phone" ><a href="tel:+79208108847" >+7 (920) 810-88-47</a></li>
+				
 			</ul>
 		</div>
 	</div>
@@ -137,8 +139,11 @@
 				
 				<div class="type-filters" >
 					<ul class="ul " >
-						<li ><a href="" data-filter="site" >Создание сайта</a></li>
-						<li ><a href="" data-filter="style" >Создание логотипа и фирменного стиля</a></li>
+						<li class="not-xs " ><a href="" data-filter="site" >Создание сайта</a></li>
+						<li class="not-xs " ><a href="" data-filter="style" >Создание логотипа и фирменного стиля</a></li>
+						
+						<li class="not-sm not-md not-lg " ><a href="" data-filter="site" >Сайты</a></li>
+						<li class="not-sm not-md not-lg " ><a href="" data-filter="style" >Логотипы</a></li>
 					</ul>
 				</div>
 			</div>
@@ -215,7 +220,7 @@
 					Пишите на электронную почту <a class="green-email" href="" >hello@labintsev.ru</a>
 					<br />
 					<div class="more-on-xs" ></div>
-					или звоните по телефону <a class="white-phone" href="tel:+79208108847" >+7 (920) 810-88-47</a>
+					или звоните по телефону<br class="not-lg not-md" /><a class="white-phone" href="tel:+79208108847" >+7 (920) 810-88-47</a>
 				</div>
 			</div>
 			

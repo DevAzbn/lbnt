@@ -17,6 +17,10 @@ $(function(){
 		
 	});
 	
-	$('.b-service-header .type-filters a').eq(0).trigger('click.fecss.b-service-header.type-filters.a');
+	if(screenJS.isXS()) {
+		$('.b-service-header .type-filters a').eq(2).trigger('click.fecss.b-service-header.type-filters.a');
+	} else {
+		$('.b-service-header .type-filters a').eq(0).trigger('click.fecss.b-service-header.type-filters.a');
+	}
 	
 });

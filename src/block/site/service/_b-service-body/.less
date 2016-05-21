@@ -16,13 +16,16 @@
 		overflow-x:hidden;
 		transition:all @trans-speed ease;
 		margin-left:-100%;
+		margin-right:100%;
 		position:absolute;
 		
 		&.active {
 			margin-left:0;
+			margin-right:0;
 			position:relative;
 		}
 		
+		/*
 		@media @media-size-xs {
 			& {
 				margin-left:0;
@@ -30,5 +33,6 @@
 				margin-bottom:4em;
 			}
 		}
+		*/
 	}
 }

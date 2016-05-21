@@ -38,17 +38,19 @@ $(function(){
 		
 	});
 	
-	$(document).on("wheel mousewheel DOMMouseScroll", function(event) {
-		//event.preventDefault();
-		
-		var block = $('.b-top-menu');
-		if(event.originalEvent.wheelDelta > 0 && block.hasClass('over-screen')) {
-			block.removeClass('over-screen');
-		} else if(event.originalEvent.wheelDelta < 0 && !block.hasClass('over-screen')) {
-			block.addClass('over-screen');
-		}
-		
-	});
+	if(!$(document.body).hasClass('is-mainpage')) {
+		$(document).on("wheel mousewheel DOMMouseScroll", function(event) {
+			//event.preventDefault();
+			
+			var block = $('.b-top-menu');
+			if(event.originalEvent.wheelDelta > 0 && block.hasClass('over-screen')) {
+				block.removeClass('over-screen');
+			} else if(event.originalEvent.wheelDelta < 0 && !block.hasClass('over-screen')) {
+				block.addClass('over-screen');
+			}
+			
+		});
+	}
 	
 	
 	$(document.body).on('click.fecss.mobile-menu.menu-btn', '.mobile-menu .menu-btn', {}, function(event){

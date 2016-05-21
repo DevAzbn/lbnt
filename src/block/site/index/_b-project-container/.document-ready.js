@@ -6,7 +6,9 @@ $(document.body).on('fecss.b-project-container.item.setActive', '.b-project-cont
 	var nav = block.find('.nav-control .item-cell');
 	
 	slides.removeClass('active');
-	slides.eq(_index).addClass('active');
+	setTimeout(function(){
+		slides.eq(_index).addClass('active');
+	}, 600);
 	
 	nav.find('.item').removeClass('active');
 	nav.find('.item').eq(_index).addClass('active');
@@ -33,9 +35,15 @@ $(document.body).on('fecss.b-project-container.init', '.b-project-container', {}
 	var slides = block.find('.project-slide');
 	var nav = block.find('.nav-control .item-cell');
 	
-	block.css({
-		height : $(window).outerHeight(true),
-	});
+	if(!screenJS.isXS()) {
+		block.css({
+			height : $(window).outerHeight(true),
+		});
+	} else {
+		block.css({
+			height : '180px',
+		});
+	}
 	
 	nav.empty();
 	

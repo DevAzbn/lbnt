@@ -10,6 +10,25 @@
 	#fe.color(@c-text);
 	#fe.z(5);
 	
+	@media @media-size-xs {
+		padding:1em 0;
+	}
+	
+	@media @media-size-sm {
+		padding:1em 0;
+	}
+	
+	.is-mainpage & {
+		position:absolute;
+		
+		@media @media-size-xs {
+			position:fixed;
+		}
+		@media @media-size-sm {
+			position:fixed;
+		}
+	}
+	
 	&.over-screen {
 		top:-20%;
 	}
@@ -38,6 +57,12 @@
 			#fe.uppercase();
 			#fe.color(@c-text);
 			#fe.size(1.3em);
+		}
+		
+		.is-mainpage & {
+			.mainpage-link {
+				display:none;
+			}
 		}
 		
 	}
@@ -124,7 +149,7 @@
 		display:none;
 		
 		.left-float, .right-float {
-			padding:1em 2em;
+			padding:1em 1em;
 		}
 		.left-float {
 			float:left;
@@ -136,6 +161,7 @@
 		.menu-btn {
 			position:relative;
 			overflow:hidden;
+			margin-top:0.5em;
 			#fe.underline(none);
 			#fe.w(2.2em);
 			#fe.h(1.2em);
@@ -150,7 +176,7 @@
 				transform:rotate(0);
 				transition:all @trans-speed ease;
 				left:0;
-				#fe.h(10%);
+				#fe.h(15%);
 				#fe.w(100%);
 				#fe.bg(#000000);
 				
@@ -158,10 +184,10 @@
 					top:0%;
 				}
 				&:nth-child(2) {
-					top:45%;
+					top:43%;
 				}
 				&:nth-child(3) {
-					top:90%;
+					top:86%;
 				}
 			}
 			
@@ -169,7 +195,7 @@
 		
 		.order-service-btn {
 			display:inline-block;
-			padding:0.5em 2.5em 0.5em;
+			padding:0.8em 2.5em 0.8em;
 			border-radius:25px;
 			transition:all @trans-speed ease;
 			#fe.bg(#2f9981);
@@ -200,6 +226,26 @@
 				list-style-type:none;
 			}
 			
+			.mobile-menu-email, .mobile-menu-phone {
+				margin-top:auto;
+				position: absolute;
+				#fe.ff(pnb);
+			}
+			
+			.mobile-menu-email {
+				bottom:20%;
+			}
+			.mobile-menu-phone {
+				bottom:13%;
+				
+				@media @media-size-landscape {
+					& {
+						bottom:20%;
+						right:2em;
+					}
+				}
+			}
+			
 			a {
 				#fe.color(#000000);
 				#fe.size(1.5em);
@@ -211,18 +257,18 @@
 			.menu-btn {
 				.item {
 					&:nth-child(1) {
-						top:-5%;
-						left:5%;
+						top:-18%;
+						left:-5%;
 						transform:rotate(45deg);
-						#fe.w(146%);
+						#fe.w(200%);
 					}
 					&:nth-child(2) {
 						transform: rotate(180deg);
 						#fe.bg(transparent);
 					}
 					&:nth-child(3) {
-						top:95%;
-						left:5%;
+						top:102%;
+						left:-5%;
 						transform:rotate(-45deg);
 						#fe.w(146%);
 					}
