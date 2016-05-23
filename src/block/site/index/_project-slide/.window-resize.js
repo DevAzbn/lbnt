@@ -9,12 +9,12 @@ $(function(){
 		if(screenJS.isXS()) {
 			if(screenJS.isLandscape()) {
 				block.css({
-					'height' : '280px',
+					'height' : '320px',
 					'background-image' : 'url(' + param.img + ')',
 				});
 			} else {
 				block.css({
-					'height' : '180px',
+					'height' : '320px',
 					'background-image' : 'url(' + param.img + ')',
 				});
 			}

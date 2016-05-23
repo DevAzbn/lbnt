@@ -2,8 +2,15 @@
 	
 	.news-item-cont {
 		margin:0 auto;
-		max-width:945px;
+		max-width:960px;
 		#fe.w(100%);
+		
+		@media @media-size-xs {
+			& {
+				margin:0 1em;
+				#fe.w(initial);
+			}
+		}
 		
 		.title {
 			position:relative;

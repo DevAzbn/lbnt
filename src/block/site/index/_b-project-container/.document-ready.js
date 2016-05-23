@@ -40,9 +40,11 @@ $(document.body).on('fecss.b-project-container.init', '.b-project-container', {}
 			height : $(window).outerHeight(true),
 		});
 	} else {
+		/*
 		block.css({
 			height : '180px',
 		});
+		*/
 	}
 	
 	nav.empty();

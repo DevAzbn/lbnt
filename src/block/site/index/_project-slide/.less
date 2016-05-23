@@ -1,6 +1,6 @@
 .project-slide {
 	transition:all @trans-speed ease;
-	transition-
+	transition--delay:@trans-speed * 1;
 	padding:15em 0;
 	#fe.w(100%);
 	#fe.bpos();
@@ -112,6 +112,24 @@
 		.show-from-left {
 			opacity:1;
 			margin-left:0;
+		}
+	}
+}
+
+.b-project-container.wheel-block.with-child-wheel .project-slide {
+	@media @media-size-xs {
+		& {
+			padding:10em 0 0;
+			.show-from-left {
+				opacity:1;
+				margin-left:0;
+			}
+			.title {
+				
+			}
+			.preview {
+				
+			}
 		}
 	}
 }

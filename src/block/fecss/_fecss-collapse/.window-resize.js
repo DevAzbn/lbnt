@@ -1,6 +1,6 @@
 $(function(){
 	
-	if(screenJS.isXS()) {
+	if(screenJS.isXS() || screenJS.isSM()) {
 		
 		var collapse = $('.b-top-menu .fecss-collapse');
 		

@@ -1,6 +1,6 @@
 $(function() {
 	
-	if(device.desktop() && $('.wheel-block').size()) {
+	if((screenJS.isMD() || screenJS.isLG()) && $('.wheel-block').size()) {
 		var scrolling;
 		var _step = 0;
 		

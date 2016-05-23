@@ -6,7 +6,12 @@ $(function(){
 		var block = $(this);
 		var param = JSON.parse(block.attr('data-slide-param')||'{}');
 		
-		if(screenJS.isXS() || screenJS.isSM() || screenJS.isMD()) {
+		if(screenJS.isXS()) {
+			block.css({
+				//'height' : $(window).outerHeight(true),
+				'background-image' : 'url(' + param.img + ')',
+			});
+		} else if(screenJS.isSM() || screenJS.isMD()) {
 			block.css({
 				'height' : $(window).outerHeight(true),
 				'background-image' : 'url(' + param.img + ')',
