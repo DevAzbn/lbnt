@@ -10,7 +10,8 @@ $(function(){
 		block
 			
 			.css({
-				'top' : '-' + block.outerHeight(true) + 15 + 'px',
+				//'top' : '-' + block.outerHeight(true) + 15 + 'px',
+				'top' : '-120%',
 			}).removeClass('active')
 		;
 		

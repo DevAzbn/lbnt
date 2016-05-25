@@ -73,6 +73,7 @@
 		a {
 			position:relative;
 			cursor:pointer;
+			.letter-space(1px);
 			#fe.size(1.3em);
 			#fe.color(#191919);
 			#fe.uppercase();
@@ -104,6 +105,9 @@
 			}
 		}
 	}
+	.mobile-link {
+		display:none;
+	}
 }
 
 .b-project-container.wheel-block.with-child-wheel.active .project-slide.active {
@@ -119,8 +123,11 @@
 .b-project-container.wheel-block.with-child-wheel .project-slide {
 	@media @media-size-xs {
 		& {
-			padding:10em 0 0;
+			//padding:10em 0 0;
+			position:relative;
+			
 			.show-from-left {
+				display:none;
 				opacity:1;
 				margin-left:0;
 			}
@@ -129,6 +136,15 @@
 			}
 			.preview {
 				
+			}
+			.mobile-link {
+				display:block;
+				position:absolute;
+				left:10%;
+				bottom:10%;
+				#fe.w(80%);
+				#fe.size(2em);
+				#fe.color(#ffffff);
 			}
 		}
 	}

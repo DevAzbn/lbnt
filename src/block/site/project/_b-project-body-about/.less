@@ -12,6 +12,7 @@
 	
 	.title {
 		margin-bottom:1em;
+		.letter-space(1px);
 		#fe.ff(pnb);
 		#fe.size(2.4em);
 		#fe.uppercase();
@@ -19,8 +20,14 @@
 	
 	.preview {
 		max-width:960px;
-		#fe.size(2em);
+		#fe.size(2.1em);
 		#fe.lh(1.4em);
+		
+		@media @media-size-xs {
+			& {
+				#fe.size(1.6em);
+			}
+		}
 	}
 	
 }

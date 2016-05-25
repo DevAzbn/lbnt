@@ -11,6 +11,8 @@ $(function(){
 		;
 		$(document.body).attr('data-wheel-step', 0);
 		
+		$('.b-project-container').trigger('fecss.b-project-container.item.setActive', [0])
+		
 	});
 	
 });

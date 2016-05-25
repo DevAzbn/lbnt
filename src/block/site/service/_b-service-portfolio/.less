@@ -18,10 +18,28 @@
 			}
 			.item {
 				display:block;
+				position:relative;
+				overflow:hidden;
 				#fe.h(27em);
 				#fe.bpos();
 				#fe.brep();
 				#fe.bsize(cover);
+				
+				&:hover {
+					.title {
+						bottom:10%;
+					}
+				}
+				
+				.title {
+					left:10%;
+					bottom:-100%;
+					position:absolute;
+					transition:all @trans-speed ease;
+					#fe.color(#ffffff);
+					#fe.size(2em);
+					#fe.w(80%);
+				}
 			}
 			
 		}
