@@ -169,15 +169,18 @@ body {
 .padding-12em {
 	padding:12em 0;
 	
-	.window-height-lg & {
-		padding:24em 0;
-	}
-	
 	@media @media-size-xs {
 		& {
 			padding-bottom:6em;
 		}
 	}
+}
+
+.window-height-lg .padding-12em {
+	padding:24em 0;
+}
+.window-height-md .padding-12em {
+	padding:21em 0;
 }
 
 .filter {
