@@ -21,6 +21,7 @@ $(
 	}
 );
 
+/*
 $(
 	function() {
 		$(document.body).bind('keydown', function(event){
@@ -37,21 +38,12 @@ $(
 		});
 	}
 );
+*/
 
 /*
 end .fecss document-ready
 */
 
-/*
-$(document.body).on(
-	//'blur focus focusin focusout load resize scroll unload click dblclick mousedown mouseup mousemove mouseover mouseout mouseenter mouseleave change select submit keydown keypress keyup error',
-	'dblclick',
-	'.autosave',
-	function(event){
-		
-	}
-);
-*/
 
 /*
 var urlL = new jsURLHistory();

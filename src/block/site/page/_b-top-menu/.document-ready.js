@@ -38,6 +38,7 @@ $(function(){
 		
 	});
 	
+	/*
 	if(!$(document.body).hasClass('is-mainpage')) {
 		$(document).on("wheel mousewheel DOMMouseScroll", function(event) {
 			//event.preventDefault();
@@ -51,6 +52,15 @@ $(function(){
 			
 		});
 	}
+	*/
+	
+	/*
+	if($(document.body).hasClass('is-mainpage') || screenJS.isXS() || screenJS.isSM()) {
+		$('.b-top-menu').addClass('fixed');
+	} else {
+		$('.b-top-menu').addClass('abs');
+	}
+	*/
 	
 	
 	$(document.body).on('click.fecss.mobile-menu.menu-btn', '.mobile-menu .menu-btn', {}, function(event){

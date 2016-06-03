@@ -1,0 +1,40 @@
+.preloader {
+	display:block;
+	position:relative;
+	margin:0 auto;
+	border-radius:50%;
+	border:1px #d9d9d9 solid;
+	#fe.bg(transparent);
+	#fe.w(138px);
+	#fe.h(138px);
+	#fe.brep();
+	#fe.bpos();
+	#site.bi('page/_preloader/preloader-logo.png');
+	
+	@keyframes preloader-before-rotate {
+		from {
+			transform: rotate(0deg);
+		}
+
+		to {
+			transform: rotate(720deg);
+		}
+	}
+	
+	&:before {
+		content:'';
+		position:absolute;
+		border-top:2px #2f9981 solid;
+		border-radius:100%;
+		left:-1px;
+		top:-1px;
+		transform-origin: center;
+		animation-name: preloader-before-rotate;
+		animation-duration: @trans-speed * 4;
+		animation-fill-mode: forward;
+		animation-iteration-count: infinite;
+		animation-timing-function:linear;
+		#fe.w(138px);
+		#fe.h(138px);
+	}
+}

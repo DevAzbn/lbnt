@@ -1,15 +1,22 @@
-.b-about-cont {
-	position:fixed;
-	//bottom:100%;
-	top:-120%;
+.fecss .b-about-cont {
+	//position:fixed;
+	bottom:100%;
+	display:table;
+	//top:-120%;
 	left:0;
-	transition:top @trans-speed * 2 ease;
+	transition:top @trans-speed * 1 ease;
 	padding:5em 0;
 	box-shadow:1px 7px 7px rgba(0, 0, 0, 0.1);
 	#fe.w(100%);
 	#fe.h(100%);
 	#fe.bg(#ffffff);
 	#fe.z(10);
+	#fe.bsize(cover);
+	#site.bi('page/_b-about-cont/b-about-cont-bg.jpg');
+	
+	@media @media-size-xs {
+		top:-200%;
+	}
 	
 	.close-btn {
 		position:absolute;
@@ -21,10 +28,14 @@
 		#fe.brep();
 		#fe.bpos();
 		#fe.bi('.can-close/close-btn.png');
+		
+		&.white {
+			#fe.bi('.can-close/close-btn-white.png');
+		}
 	}
 	
 	&.active {
-		top:0 !important;
+		top:0px !important;
 	}
 	
 	.texted {

@@ -899,6 +899,10 @@
 			opacity:0;
 			height: 0%;
 			
+			&.white-loader {
+				#fe.bg(#ffffff);
+			}
+			
 			&.active {
 				opacity:1;
 				height: 100%;
@@ -1918,7 +1922,24 @@ body {
 	}
 	
 	&.style-lbnt-about {
-		#fe.color(#1f1f1f);
+		position:relative;
+		text-align:left;
+		max-width:980px;
+		margin:0 auto;
+		#fe.color(#ffffff);
+		
+		&:before {
+			content:'';
+			position:absolute;
+			left:-160px;
+			top:-160px;
+			#fe.brep();
+			#fe.bpos();
+			#fe.bsize(cover);
+			#fe.w(130px);
+			#fe.h(130px);
+			#site.bi('page/_b-about-cont/b-about-cont-text-before.png');
+		}
 		
 		h1,h2,h3,h4,h5,h6 {
 			margin-bottom:1.5em;
@@ -1928,11 +1949,12 @@ body {
 			#fe.uppercase();
 		}
 		p {
+			max-width:635px;
 			#fe.size(1.6em);
 		}
 		a {
 			#fe.underline();
-			#fe.color(#1f1f1f);
+			#fe.color(#ffffff);
 			
 			&:hover {
 				#fe.underline(none);
@@ -1967,18 +1989,25 @@ body {
 .letter-space(@val) {
 	letter-spacing:@val;
 }
-.b-about-cont {
-	position:fixed;
-	//bottom:100%;
-	top:-120%;
+.fecss .b-about-cont {
+	//position:fixed;
+	bottom:100%;
+	display:table;
+	//top:-120%;
 	left:0;
-	transition:top @trans-speed * 2 ease;
+	transition:top @trans-speed * 1 ease;
 	padding:5em 0;
 	box-shadow:1px 7px 7px rgba(0, 0, 0, 0.1);
 	#fe.w(100%);
 	#fe.h(100%);
 	#fe.bg(#ffffff);
 	#fe.z(10);
+	#fe.bsize(cover);
+	#site.bi('page/_b-about-cont/b-about-cont-bg.jpg');
+	
+	@media @media-size-xs {
+		top:-200%;
+	}
 	
 	.close-btn {
 		position:absolute;
@@ -1990,10 +2019,14 @@ body {
 		#fe.brep();
 		#fe.bpos();
 		#fe.bi('.can-close/close-btn.png');
+		
+		&.white {
+			#fe.bi('.can-close/close-btn-white.png');
+		}
 	}
 	
 	&.active {
-		top:0 !important;
+		top:0px !important;
 	}
 	
 	.texted {
@@ -2195,7 +2228,7 @@ body {
 	}
 }
 .b-top-menu {
-	position:fixed;
+	position:absolute;
 	transition:all @trans-speed ease;
 	left:0;
 	top:0;
@@ -2215,7 +2248,7 @@ body {
 	}
 	
 	.is-mainpage & {
-		position:absolute;
+		position:fixed;
 		
 		@media @media-size-xs {
 			position:fixed;
@@ -2584,6 +2617,46 @@ body {
 	position:relative;
 	overflow-x: hidden;
 	transition:all @trans-speed ease;
+}
+.preloader {
+	display:block;
+	position:relative;
+	margin:0 auto;
+	border-radius:50%;
+	border:1px #d9d9d9 solid;
+	#fe.bg(transparent);
+	#fe.w(138px);
+	#fe.h(138px);
+	#fe.brep();
+	#fe.bpos();
+	#site.bi('page/_preloader/preloader-logo.png');
+	
+	@keyframes preloader-before-rotate {
+		from {
+			transform: rotate(0deg);
+		}
+
+		to {
+			transform: rotate(720deg);
+		}
+	}
+	
+	&:before {
+		content:'';
+		position:absolute;
+		border-top:2px #2f9981 solid;
+		border-radius:100%;
+		left:-1px;
+		top:-1px;
+		transform-origin: center;
+		animation-name: preloader-before-rotate;
+		animation-duration: @trans-speed * 4;
+		animation-fill-mode: forward;
+		animation-iteration-count: infinite;
+		animation-timing-function:linear;
+		#fe.w(138px);
+		#fe.h(138px);
+	}
 }
 .project-slide {
 	transition:all @trans-speed ease;

@@ -143,7 +143,24 @@ body {
 	}
 	
 	&.style-lbnt-about {
-		#fe.color(#1f1f1f);
+		position:relative;
+		text-align:left;
+		max-width:980px;
+		margin:0 auto;
+		#fe.color(#ffffff);
+		
+		&:before {
+			content:'';
+			position:absolute;
+			left:-160px;
+			top:-160px;
+			#fe.brep();
+			#fe.bpos();
+			#fe.bsize(cover);
+			#fe.w(130px);
+			#fe.h(130px);
+			#site.bi('page/_b-about-cont/b-about-cont-text-before.png');
+		}
 		
 		h1,h2,h3,h4,h5,h6 {
 			margin-bottom:1.5em;
@@ -153,11 +170,12 @@ body {
 			#fe.uppercase();
 		}
 		p {
+			max-width:635px;
 			#fe.size(1.6em);
 		}
 		a {
 			#fe.underline();
-			#fe.color(#1f1f1f);
+			#fe.color(#ffffff);
 			
 			&:hover {
 				#fe.underline(none);
