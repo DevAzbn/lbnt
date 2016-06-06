@@ -55,6 +55,7 @@ $(document.body).on('fecss.b-project-container.init', '.b-project-container', {}
 		var item = $('<a/>', {
 			class : 'item',
 			href : '#project-slide-' + _index,
+			html : '<span>0' + (_index + 1) + '</span>',
 		})
 			.appendTo(nav);
 	});

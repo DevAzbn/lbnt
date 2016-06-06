@@ -71,7 +71,7 @@ body {
 		.simple {
 			margin-top:1em;
 			#fe.size(1.8em);
-			#fe.ff(pnb);
+			//#fe.ff(pnb);
 		}
 		.simple-small {
 			margin-top:0.5em;
@@ -148,6 +148,12 @@ body {
 		max-width:980px;
 		margin:0 auto;
 		#fe.color(#ffffff);
+		
+		@media @media-size-xs {
+			& {
+				padding:1em 2em;
+			}
+		}
 		
 		&:before {
 			content:'';

@@ -6,7 +6,7 @@
 		var href = btn.attr('href');
 		var target = btn.attr('data-target');
 		
-		if(typeof target != 'undefined' && target != 'undefined') {
+		if(target && typeof target != 'undefined' && target != 'undefined') {
 			//href = target;
 		} else {
 			target = 'title:title, body:body';

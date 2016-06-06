@@ -25,6 +25,7 @@
 				#fe.brep();
 				#fe.bsize(cover);
 				
+				/*
 				&:hover {
 					&:before {
 						bottom:0%;
@@ -54,6 +55,61 @@
 					#fe.size(2em);
 					#fe.w(80%);
 				}
+				*/
+				
+				&:hover {
+					.imaged {
+						left:10px;
+						right:10px;
+						top:10px;
+						bottom:10px;
+					}
+					.texted {
+						opacity:1;
+					}
+				}
+				
+				.imaged {
+					position:absolute;
+					left:0;
+					right:0;
+					top:0;
+					bottom:0;
+					transition:all @trans-speed / 2 ease;
+					#fe.bpos();
+					#fe.brep();
+					#fe.bsize(cover);
+				}
+				.texted {
+					position:absolute;
+					left:25px;
+					bottom:25px;
+					opacity:0;
+					transition:all @trans-speed / 2 ease;
+					
+					@media @media-size-xs {
+						& {
+							left:20px;
+							bottom:15px;
+						}
+					}
+					
+					.title {
+						#fe.size(2em);
+						#fe.ff(pnb);
+						
+						@media @media-size-xs {
+							& {
+								#fe.size(1.8em);
+							}
+						}
+					}
+					.preview {
+						#fe.size(1.4em);
+					}
+				}
+				
+				
 			}
 			
 		}
