@@ -6,7 +6,7 @@
 			height:0;
 		}
 		to {
-			height:110%;
+			height:106%;
 		}
 	}
 	
@@ -54,4 +54,59 @@
 .under-line-grid {
 	position:relative;
 	#fe.z(1);
+}
+
+.v-line-grid {
+	position:absolute;
+	left:0;
+	right:0;
+	top:0;
+	bottom:0;
+	z-index:0;
+	
+	.grid-cont {
+		#fe.h(100%);
+		position:relative;
+	}
+	
+	.v-grey-line {
+		position:absolute;
+		#fe.h(0);
+		#fe.w(1px);
+		//#fe.bg(rgba(196,196,196,0.3));
+		#fe.bg(#f1f1f1);
+		#fe.z(0);
+		animation-duration:@trans-speed * 2;
+		animation-name: v-grey-line-anim;
+		animation-fill-mode:forwards;
+		
+		@media @media-size-xs {
+			& {
+				display:none;
+			}
+		}
+		
+		@media @media-size-sm {
+			& {
+				display:none;
+			}
+		}
+		
+		&.left {
+			left:0;
+			top:0;
+			animation-delay:@trans-speed * 2;
+		}
+		&.right {
+			right:0;
+			top:0;
+			animation-delay:@trans-speed * 4;
+		}
+		&.center {
+			left:50%;
+			top:0;
+			animation-delay:@trans-speed * 3;
+		}
+		
+	}
 }

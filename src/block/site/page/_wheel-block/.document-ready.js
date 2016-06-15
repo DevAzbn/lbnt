@@ -170,14 +170,17 @@ $(function() {
 		;
 		
 		
-		$(document).on("wheel mousewheel DOMMouseScroll", function(event) {
+		$(document.body).on("wheel mousewheel DOMMouseScroll MozMousePixelScroll", function(event) {
 			event.preventDefault();
 			
 			if(scrolling) {
 				return;
 			} else {
 				scrolling = true;
-				$(document.body).trigger('fecss.wheel-block.set', [{diff:event.originalEvent.wheelDelta}]);
+				
+				var diff = (-event.originalEvent.deltaY) || event.originalEvent.detail || event.originalEvent.wheelDelta;
+				
+				$(document.body).trigger('fecss.wheel-block.set', [{diff:diff}]);
 			}
 			
 		});
