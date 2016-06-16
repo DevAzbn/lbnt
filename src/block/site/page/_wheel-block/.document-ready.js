@@ -171,7 +171,9 @@ $(function() {
 		
 		
 		$(document.body).on("wheel mousewheel DOMMouseScroll MozMousePixelScroll", function(event) {
-			event.preventDefault();
+			if($(document.body).hasClass('is-mainpage')) {
+				event.preventDefault();
+			}
 			
 			if(scrolling) {
 				return;
