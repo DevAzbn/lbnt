@@ -71,8 +71,8 @@ $(function(){
 		
 	});
 	
-	if($(document.body).hasClass('is-mainpage')) {
-		$('.b-top-menu .site-menu ul li.mainpage-link').empty().remove();
-	}
+	//if($(document.body).hasClass('is-mainpage')) {
+	//	$('.b-top-menu .site-menu ul li.mainpage-link').empty().remove();
+	//}
 	
 });
