@@ -10,11 +10,12 @@ $(function(){
 		$('.b-project-filters .type-filters a').removeClass('active');
 		btn.addClass('active');
 		
-		$('.b-project-list .project-cont').hide();
+		$('.b-project-list .project-cont[data-cat-flt]').hide();
+		
 		if(cat_flt) {
 			$('.b-project-list .project-cont[data-cat-flt="' + cat_flt + '"]').fadeIn('fast');
 		} else {
-			$('.b-project-list .project-cont').fadeIn('fast');
+			$('.b-project-list .project-cont[data-cat-flt]').fadeIn('fast');
 		}
 		
 	});
